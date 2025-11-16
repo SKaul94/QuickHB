@@ -1,0 +1,566 @@
+html * {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.dark-mode {
+  color: white;
+  background-color: #282828;
+}
+
+.dark-mode a:link { color: lightskyblue; }
+.dark-mode a:visited { color: #958b9f; }
+.dark-mode a:hover { color: #952727; }
+.dark-mode a:active { color: #ff4040; text-decoration:none; font-weight:normal; }
+
+video {
+  width: 100%;
+  height: auto;
+}
+
+.tools > li:has(a) {
+  margin: 0.5rem 0.1rem;
+  padding: 0.1rem;
+}
+
+ol.tools {
+  counter-reset: item;
+  list-style-type: none;
+}
+
+ol.tools li:before {
+  content: '7.' counter(item, decimal) '. ';
+  counter-increment: item;
+}
+
+.center {
+  text-align: center;
+}
+
+.shift_right {
+  margin-left: 3rem;
+}
+
+object, iframe {
+  display: block;
+  min-height: 60rem;
+  height: 100%;
+  width: 100%;
+  border-right: thin solid black;
+  border-bottom: thin solid black;
+}
+
+.resizer { display:flex; margin:0; padding:0; resize:both; overflow: hidden; }
+.resizer > .resized { flex-grow:1; margin:0; padding:0; border:0; max-height: 70vh;  overflow: auto; }
+
+span.icon.small {
+  padding: 3px;
+  border: thin solid transparent;
+}
+
+span.icon.noborder {
+  border: thin solid transparent;
+}
+
+span.icon.top {
+  padding: 6px 8px 0px 6px;
+}
+
+span.icon {
+  border: thin solid whitesmoke;
+  border-radius: 12px;
+  padding: 5px 6px 0px 6px;
+  margin: 3px;
+}
+
+span.icon:hover {
+  background-color: #555555;
+}
+
+span.icon:active, span.icon:active > svg {
+  border-color: blue;
+  background-color: deepskyblue;
+  transform: translateY(4px);
+}
+
+.hide {
+  display: none;
+}
+
+.hidden { /* off screen */
+  position: absolute;
+  left: -10000px;
+  top: -10000px;
+}
+
+.spacy {
+  margin: 1rem 0;
+}
+
+.spacy_width {
+  margin: 0 0.3rem;
+}
+
+.large {
+  font-size: large;
+  width: 20rem;
+}
+
+.azr-container {
+  margin: 0 0 0.5rem 0;
+}
+
+.border-dashed {
+  background-color: #9dd2f6;
+  user-select: none;
+  padding: 0.3rem;
+  margin: 0.1rem;
+  border-style: dashed;
+}
+
+.dirty * {
+  font-style: italic;
+  font-weight: bolder;
+  color: red;
+}
+
+.inline {
+  display: inline;
+}
+
+.printed_page {
+  width: 100%;
+  height: auto;
+}
+
+.hidden > img.printed_page {
+  display: none;
+}
+
+.qr_code {
+  background-color: white;
+  border: thin solid black;
+  margin: 0.1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.qr_code > h2 {
+  color: black;
+  text-align: center;
+}
+
+.qr_code > svg {
+  width: 100%;
+  height: auto;
+  border: 1px solid blue;
+  margin: 1rem 0;
+}
+
+.bold {
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.delete {
+  margin: 0 1rem 0 0;
+  padding: 0;
+}
+
+table * {
+  color: black;
+  font-family: Arial, sans-serif;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin: 0 auto;
+  text-align: center;
+}
+
+tr:hover > td, tr:focus > td, tr:active > td, .editing > td {
+  border: 1px dashed black;
+  background-color: #ffc4c4;
+}
+
+td[contenteditable]:hover {
+  background-color: #ffd900;
+}
+
+td[contenteditable]:focus {
+  background-color: #fae3ac;
+}
+
+td[contenteditable]:active {
+  background-color: #fae3ac;
+}
+
+th,
+td {
+  padding: 2px;
+}
+
+tr:nth-child(even) {
+  background-color: #eee;
+}
+
+tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+th {
+  color: white;
+  border: thin solid white;
+  background-color: black;
+  text-align: center;
+}
+
+tr > th:first-child {
+  border-left: thin solid black;
+}
+
+tr > th:last-child {
+  border-right: thin solid black;
+}
+
+table {
+  width: calc(100% - 0.5rem);
+}
+
+#field_table * {
+  font-size: medium;
+}
+
+span.filename {
+  margin: 0 0.5rem;
+}
+
+.subheader {
+  font-weight: bold;
+  text-align: left;
+  margin: 0;
+}
+
+#fields_area {
+  height: auto;
+  font-size: xx-small;
+  border: thin solid black;
+  border-radius: 10px;
+  box-shadow: 4px 4px 3px 0 #777777;
+  color: black;
+  background-color: #e2dede;
+  width: 98%;
+  padding: 0.4rem;
+  margin: 0.5rem 0;
+}
+
+#fields_area:empty {
+  border: none;
+  box-shadow: none;
+  background-color: inherit;
+  height: 0;
+}
+
+#fields_area > span {
+  display: inline-block;
+}
+
+.plus {
+  margin: 1rem;
+  height: 2rem;
+  width: 60%;
+  cursor: pointer;
+}
+
+button, .up, .down, #select-flag {
+  padding: 0.3rem;
+  margin-right: 0.3rem;
+  font-size: large;
+  text-align: center;
+  border: thin solid;
+  border-radius: 10px;
+  border-color: white black black white;
+  box-shadow: 4px 4px 3px 0 #777777;
+  background-color: #9dd2f6;
+  cursor: pointer;
+}
+
+button:focus, .up:focus, .down:focus, #select-flag:focus {
+  outline: none;
+  background-color: deepskyblue;
+}
+
+button:active, .up:active, .down:active, #select-flag:active {
+  outline: none;
+  background-color: deepskyblue;
+  transform: translateY(4px);
+}
+
+#select-flag > svg {
+  width: 1.6rem;
+  translate: 0.15rem 0.3rem;
+}
+
+#select-flag > svg:active {
+  translate: 0.15rem 0.6rem;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:active {
+  transform: translateY(4px);
+}
+
+.rule {
+  min-width: 10rem;
+}
+
+.threshold {
+  width: 2rem;
+}
+
+.fields {
+  font-size: x-small;
+}
+
+#fixed-right-buttons {
+  position: fixed;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+.editor {
+  border: thin solid black;
+  border-radius: 10px;
+  box-shadow: 4px 4px 3px 0 #777777;
+  padding: 0.5rem 0;
+  margin: 0 0 1rem 0;
+  text-align: right;
+}
+
+.PVB {
+  background-color: #bff1b9;
+}
+
+.DGL {
+  background-color: #c9e4ff;
+}
+
+.Allgemein {
+  background-color: #e8b0b0;
+}
+
+.template {
+  background-color: #d6b062;
+}
+
+.textblock {
+  background-color: #FFEC9E;
+}
+
+p {
+  margin: 0 0.5rem;
+}
+
+.cursor_pointer {
+  cursor: pointer;
+}
+.apply {
+  padding: 1rem;
+  margin: 1rem;
+  background-color: #e2dede;
+}
+.left {
+  text-align: left;
+  color: black;
+}
+
+h2 {
+  margin: 0 1rem;
+  padding: 0;
+}
+
+.result {
+  height: 0;
+}
+
+.case {
+  margin-bottom: 2rem;
+}
+
+.shadow-font {
+  font-size: xx-large;
+  -webkit-text-stroke: 1px black;
+  -webkit-text-fill-color: white;
+  text-shadow: 3px 3px 2px rgba(150, 150, 150, 0.7);
+}
+
+.avoid-line-break {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.wide {
+  width: 100%;
+}
+
+textarea {
+  margin-top: 0.3rem;
+}
+
+.savings {
+  margin-top: 1rem;
+  font-family: serif, "Times New Roman";
+  font-style: italic;
+  text-align: center;
+}
+
+/* Flaired edges, by Tomas Theunissen, https://css-tricks.com/examples/hrs/ */
+
+hr.separator {
+  margin-top: 0.5rem;
+  overflow: visible; /* For IE */
+  height: 30px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+}
+hr.separator:before {
+  display: block;
+  content: "";
+  height: 30px;
+  margin-top: -31px;
+  border-style: solid;
+  border-color: black;
+  border-width: 0 0 1px 0;
+  border-radius: 20px;
+}
+
+
+.simple-keyboard {
+  border-radius: 10px;
+  box-shadow: 4px 4px 3px 0 #777777;
+  padding: 0.5rem 0;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.keyboard-container {
+  color: black;
+}
+
+.hg-functionBtn {
+  background-color: #FFEC9E !important;
+}
+
+.error-message {
+  border: thick solid red;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.keyboard {
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  padding: 0 0.3rem;
+}
+
+#help_area {
+  margin: 0.4rem 0;
+  padding: 0.4rem 1rem 3rem 1rem;
+  border: thin solid black;
+}
+
+.help h2 {
+  margin: 1rem 0 0.2rem;
+}
+
+.help p {
+  margin: initial;
+  text-align: justify;
+}
+
+.help .fixed {
+  font-family: monospace;
+  font-size: small;
+}
+
+ul.menu {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-left: 0;
+  justify-content: space-between;
+}
+
+ul.menu > li {
+  color: black;
+  flex-grow: 1; /* ... if you want the <li>s to grow and fill all space */
+  border-radius: 4px;
+  background-color: lightseagreen;
+  padding: 0.3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.2rem;
+  text-align: center;
+  border: 2px solid;
+  border-color: white black black white;
+}
+
+ul.menu.submenu {
+  justify-content: flex-start;
+}
+
+ul.menu.submenu > li {
+  background-color: sandybrown;
+  flex: 0 1 auto;
+}
+
+ul.menu > li.active {
+  background-color: lightcoral;
+  border-color: black white white black;
+  box-shadow: none;
+}
+
+ul.menu > li:hover {
+  flex-grow: 1; /* ... if you want the <li>s to grow and fill all space */
+  background-color: white;
+  border-color: white;
+  cursor: pointer;
+}
+
+ul.menu.submenu > li:hover {
+  flex: 0 1 auto;
+  background-color: white;
+  border-color: black white white black;
+  cursor: pointer;
+}
+
+.selected_content {
+  border: thick solid;
+  border-color: white;
+}
+
+a:hover {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+
+#home {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+#home > svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+@media print {
+  .pagebreak { page-break-before: always; } /* page-break-after works, as well */
+}
