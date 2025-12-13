@@ -18,8 +18,76 @@ video {
   height: auto;
 }
 
-textarea.generated {
-  width: 100%;
+.generated {
+  margin: 0.5rem;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font: inherit;
+}
+
+#genderswitch {
+  background: #aaa;
+  padding: 1rem;
+  width: 7rem;
+  margin: 0 auto;
+  border-radius: 0.75rem;
+  display: inline-block;
+}
+
+#genderchoice {
+  margin: 1rem;
+  font: inherit;
+  font-size: xx-large;
+  display: inline-block;
+  transform: translateY(-1rem);
+}
+
+#switch1 {
+  display:none;
+}
+
+#switch1:checked + label .buttonbackground {
+  background-color:#d8a2c5;
+}
+
+#switch1:checked + label .buttonslider {
+  left: 2.5rem;         /* = buttonbackground-width / 2 */
+  background:#eee;
+}
+
+#switch1 + label .buttonbackground:hover {
+  cursor:pointer;
+}
+
+.buttonslider {
+  background:#ddd;
+  width:2.7rem;
+  height:2.7rem;
+  border-radius:50%;
+  border:1px solid #aaa;
+  position: absolute;
+  left:0;
+  top:-0.15rem;
+  box-shadow: 0 4px 3px rgba(0,0,0,0.3);
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.buttonbackground {
+  background-color:#7db8eb;
+  width: 5rem;
+  height: 2.5rem;          /* = width/2 */
+  border-radius: 1.25rem;  /* = height/2 */
+  box-shadow:
+    0 2px 2px rgba(0,0,0,0.5) inset,
+    0 -2px 0px rgba(255,255,255,0.5) inset;
+  position: relative;
+  margin: 0.5rem auto;
+  display: inline-block;
+  transition: background-color 0.2s ease;
 }
 
 .tools > li:has(a) {
@@ -282,10 +350,10 @@ span.filename {
 button, .up, .down, #select-flag {
   padding: 0.3rem;
   margin-right: 0.3rem;
-  font-size: large;
+  font: inherit;
   text-align: center;
   border: thin solid;
-  border-radius: 10px;
+  border-radius: 6px;
   border-color: white black black white;
   box-shadow: 4px 4px 3px 0 #777777;
   background-color: #9dd2f6;
@@ -300,7 +368,7 @@ button:focus, .up:focus, .down:focus, #select-flag:focus {
 button:active, .up:active, .down:active, #select-flag:active {
   outline: none;
   background-color: deepskyblue;
-  transform: translateY(4px);
+  transform: translateY(6px);
 }
 
 #select-flag > svg {
@@ -415,6 +483,14 @@ h2 {
 
 textarea {
   margin-top: 0.3rem;
+  width: 100%;
+  height: min-content;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font: inherit;
 }
 
 .savings {
