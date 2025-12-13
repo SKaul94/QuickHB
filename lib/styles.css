@@ -18,6 +18,10 @@ video {
   height: auto;
 }
 
+textarea.generated {
+  width: 100%;
+}
+
 .tools > li:has(a) {
   margin: 0.5rem 0.1rem;
   padding: 0.1rem;
@@ -381,7 +385,7 @@ p {
 }
 
 h2 {
-  margin: 0 1rem;
+  margin: 1rem 0 0 0;
   padding: 0;
 }
 

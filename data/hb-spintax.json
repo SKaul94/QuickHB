@@ -1,0 +1,177 @@
+[
+  {
+    "id": "einl_001",
+    "category": "Einleitung",
+    "title": "Dringender Tatverdacht (Standard)",
+    "shortcut": "dv_std",
+    "spintax": "{Der Beschuldigte|Der Angeschuldigte|Die beschuldigte Person} ist {dringend verdächtig|hochgradig verdächtig}, {am Tattag|zu der genannten Tatzeit|im fraglichen Zeitraum} {eine Straftat von erheblicher Bedeutung begangen zu haben|die ihm zur Last gelegte Tat verübt zu haben|sich strafbar gemacht zu haben}."
+  },
+  {
+    "id": "einl_002",
+    "category": "Einleitung",
+    "title": "Tatvorwurf Zusammenfassung",
+    "shortcut": "tat_sum",
+    "spintax": "{Ihm|Ihr|Der beschuldigten Person} wird {konkret|im Wesentlichen|insbesondere} zur Last gelegt, {durch die nachfolgend geschilderte Handlung|durch das unten beschriebene Verhalten} den Tatbestand {eines Verbrechens|eines Vergehens} verwirklicht zu haben."
+  },
+  {
+    "id": "bew_001",
+    "category": "Beweislage",
+    "title": "Beweis durch Zeugen",
+    "shortcut": "bew_zeug",
+    "spintax": "{Der dringende Tatverdacht|Die Verdachtslage} {stützt sich|ergibt sich|beruht} {maßgeblich|insbesondere|vor allem} auf {die glaubhaften Angaben|die detaillierten Aussagen} {des Zeugen|der Zeugin|der Geschädigten}. {Diese|Jene} hat {glaubhaft|widerspruchsfrei|nachvollziehbar} {geschildert|bekundet|ausgesagt}, dass {der Beschuldigte|der Täter} {vor Ort war|die Tat ausführte|an der Handlung beteiligt war}."
+  },
+  {
+    "id": "bew_002",
+    "category": "Beweislage",
+    "title": "Beweis durch Spuren (DNA/Fingerabdrücke)",
+    "shortcut": "bew_spur",
+    "spintax": "{Zudem|Darüber hinaus|Ergänzend} {konnten am Tatort|wurden am Ort des Geschehens} {Spuren|daktyloskopische Spuren|DNA-Spuren} {gesichert werden|festgestellt werden}, die {dem Beschuldigten|der beschuldigten Person} {zweifelsfrei|eindeutig} {zuzuordnen sind|zugeordnet werden konnten}."
+  },
+  {
+    "id": "bew_003",
+    "category": "Beweislage",
+    "title": "Geständnis / Einlassung",
+    "shortcut": "bew_gest",
+    "spintax": "{Der Beschuldigte|Der Festgenommene} hat sich {zum Tatvorwurf eingelassen|zur Sache geäußert} und {die Tat eingeräumt|ein Geständnis abgelegt|seine Beteiligung gestanden}. {Seine Angaben|Die Schilderungen des Beschuldigten} {decken sich|stimmen überein} mit {den objektiven Spuren|den Ermittlungsergebnissen|den bisherigen Erkenntnissen}."
+  },
+  {
+    "id": "bew_004",
+    "category": "Beweislage",
+    "title": "Videoüberwachung",
+    "shortcut": "bew_vid",
+    "spintax": "{Das Tatgeschehen|Der Ablauf der Tat} wurde durch {eine Videoüberwachungsanlage|die installierten Überwachungskameras} {aufgezeichnet|dokumentiert}. {Auf den Aufnahmen|Bei der Auswertung des Videomaterials} ist {zu erkennen|deutlich sichtbar}, wie {der Beschuldigte|eine Person, bei der es sich augenscheinlich um den Beschuldigten handelt,} {die Tat begeht|handelt}."
+  },
+  {
+    "id": "haft_001",
+    "category": "Haftgrund: Fluchtgefahr",
+    "title": "Fehlende soziale Bindung",
+    "shortcut": "flucht_bind",
+    "spintax": "Es besteht {der Haftgrund der Fluchtgefahr|Fluchtgefahr} gemäß § 112 Abs. 2 Nr. 2 StPO. {Der Beschuldigte|Der Angeschuldigte} verfügt {über keinen festen Wohnsitz|über keine meldefähige Anschrift} {im Bundesgebiet|in der Bundesrepublik Deutschland}. {Feste soziale Bindungen|Familiäre oder berufliche Wurzeln}, die ihn {vom Untertauchen abhalten könnten|an einer Flucht hindern würden}, sind {nicht ersichtlich|nicht vorhanden|nicht erkennbar}."
+  },
+  {
+    "id": "haft_002",
+    "category": "Haftgrund: Fluchtgefahr",
+    "title": "Hohe Straferwartung",
+    "shortcut": "flucht_strafe",
+    "spintax": "{Aufgrund der Schwere der Tat|Angesichts des erheblichen Unrechtsgehalts} hat der Beschuldigte mit einer {empfindlichen|nicht unerheblichen|längeren} {Freiheitsstrafe|Haftstrafe} zu rechnen. {Dieser Umstand|Diese Aussicht} begründet {einen hohen Fluchtanreiz|einen erheblichen Anreiz, sich dem Verfahren zu entziehen}, der durch {bestehende Bindungen|soziale Kontakte} nicht {aufgewogen|kompensiert} wird."
+  },
+  {
+    "id": "haft_003",
+    "category": "Haftgrund: Fluchtgefahr",
+    "title": "Auslandskontakte",
+    "shortcut": "flucht_ausl",
+    "spintax": "{Der Beschuldigte|Der Tatverdächtige} unterhält {vielfältige Kontakte|familiäre Beziehungen} ins Ausland. Es ist {zu befürchten|davon auszugehen}, dass er sich {unter Ausnutzung dieser Kontakte|mithilfe seiner Verbindungen} {in sein Heimatland|ins Ausland} absetzen wird, um sich {der Strafverfolgung|dem Zugriff der Justiz} zu entziehen."
+  },
+  {
+    "id": "haft_004",
+    "category": "Haftgrund: Fluchtgefahr",
+    "title": "Untertauchen in der Anonymität",
+    "shortcut": "flucht_anon",
+    "spintax": "Es besteht die {Gefahr|konkrete Besorgnis}, dass der Beschuldigte {in die Anonymität einer Großstadt|in unbekannte Aufenthaltsorte} untertaucht. {In der Vergangenheit|Bereits früher} hat er gezeigt, dass er {bereit ist, seinen Aufenthalt zu verschleiern|seinen Aufenthaltsort verborgen hält}."
+  },
+  {
+    "id": "haft_005",
+    "category": "Haftgrund: Verdunkelung",
+    "title": "Einwirkung auf Zeugen",
+    "shortcut": "verd_zeug",
+    "spintax": "Es besteht der Haftgrund der {Verdunkelungsgefahr|Verdunklungsgefahr} gemäß § 112 Abs. 2 Nr. 3 StPO. Das Verhalten des Beschuldigten {lässt den dringenden Verdacht zu|begründet die Besorgnis}, dass er {auf Zeugen einwirken|Mitbeschuldigte beeinflussen} wird, um {die Wahrheitsfindung zu erschweren|Aussagen zu seinen Gunsten zu manipulieren}. {Konkret hat er bereits versucht,|Es liegen Hinweise vor, dass er plant,} {Kontakt zu Zeugen aufzunehmen|Dritte unter Druck zu setzen}."
+  },
+  {
+    "id": "haft_006",
+    "category": "Haftgrund: Verdunkelung",
+    "title": "Beweismittelvernichtung",
+    "shortcut": "verd_bew",
+    "spintax": "Es ist {zu befürchten|davon auszugehen}, dass der Beschuldigte {Beweismittel vernichten|Spuren beseitigen|unterlagen beiseite schaffen} wird, wenn er auf freiem Fuß bleibt. {Insbesondere|Vor allem} der Zugriff auf {elektronische Datenträger|noch nicht sichergestellte Dokumente} könnte {die Ermittlungen gefährden|den Untersuchungserfolg vereiteln}."
+  },
+  {
+    "id": "verh_001",
+    "category": "Verhältnismäßigkeit",
+    "title": "Haft ist verhältnismäßig",
+    "shortcut": "verh_std",
+    "spintax": "Die Anordnung der Untersuchungshaft ist {verhältnismäßig|angemessen}. {Sie steht nicht außer Verhältnis|Die Maßnahme steht in einem angemessenen Verhältnis} zur {Bedeutung der Sache|Schwere des Tatvorwurfs} und der {zu erwartenden Strafe|im Raum stehenden Rechtsfolge}. {Weniger einschneidende Maßnahmen|Mildere Mittel} gem. § 116 StPO sind {nicht erfolgversprechend|nicht ausreichend}, um den Zweck der Untersuchungshaft zu erreichen."
+  },
+  {
+    "id": "verh_002",
+    "category": "Verhältnismäßigkeit",
+    "title": "Mildere Mittel ungeeignet",
+    "shortcut": "verh_mild",
+    "spintax": "{Eine Meldeauflage|Die Abgabe des Reisepasses|Eine Kautionsleistung} bietet {keine hinreichende Gewähr|keine ausreichende Sicherheit} dafür, dass sich der Beschuldigte {dem Verfahren stellt|dem Zugriff der Strafverfolgungsbehörden zur Verfügung hält}. {Aufgrund der hohen Fluchtgefahr|Wegen der konkreten Verdunkelungsgefahr} ist der Vollzug der Haft {unerlässlich|zwingend geboten}."
+  },
+  {
+    "id": "del_kv_001",
+    "category": "Delikt: Körperverletzung",
+    "title": "Tathergang Schlag/Tritt",
+    "shortcut": "kv_schlag",
+    "spintax": "{Der Beschuldigte|Der Täter} {versetzte|gab} dem Geschädigten {einen Faustschlag|einen wuchtigen Schlag|mehrere Schläge} {ins Gesicht|gegen den Kopf|gegen den Oberkörper}. {Dadurch erlitt das Opfer|Hierdurch trug der Geschädigte} {Schmerzen|Verletzungen|Hämatome} davon. {Anschließend|Im weiteren Verlauf} {trat er|trat der Beschuldigte} auf den {am Boden liegenden|wehrlosen} Geschädigten ein."
+  },
+  {
+    "id": "del_kv_002",
+    "category": "Delikt: Körperverletzung",
+    "title": "Gefährliches Werkzeug",
+    "shortcut": "kv_werkz",
+    "spintax": "{Bei der Tat|Während der Auseinandersetzung} verwendete der Beschuldigte {ein Messer|einen Schlagstock|eine zerbrochene Glasflasche}, mithin ein {gefährliches Werkzeug|einen gefährlichen Gegenstand}. Er {führte damit Stichbewegungen aus|schlug damit zu}, {wobei er Verletzungen billigend in Kauf nahm|um den Geschädigten erheblich zu verletzen}."
+  },
+  {
+    "id": "del_dieb_001",
+    "category": "Delikt: Diebstahl",
+    "title": "Ladendiebstahl",
+    "shortcut": "dieb_laden",
+    "spintax": "{Der Beschuldigte|Die Person} {betrat|suchte} die Geschäftsräume {der Firma|des Ladens} {mit dem Vorsatz|in der Absicht}, {Waren zu entwenden|Gegenstände zu stehlen}. Er {steckte|verbarg} {die Ware|das Diebesgut} {in seine Jackentasche|in einen mitgeführten Rucksack} und {passierte den Kassenbereich|verließ den Kassenbereich}, {ohne die Ware zu bezahlen|ohne den Kaufpreis zu entrichten}."
+  },
+  {
+    "id": "del_dieb_002",
+    "category": "Delikt: Diebstahl",
+    "title": "Einbruchsdiebstahl",
+    "shortcut": "dieb_einbr",
+    "spintax": "{Zur Nachtzeit|Im Schutz der Dunkelheit} {verschaffte sich der Beschuldigte Zutritt|drang der Täter ein} in {das Objekt|die Wohnung|das Geschäftslokal}, indem er {ein Fenster aufhebelte|die Tür aufbrach|die Scheibe einschlug}. {Im Inneren|Dort} {durchsuchte er|durchwühlte er} {die Räumlichkeiten|Schränke und Schubladen} nach {Stehlenswertem|Wertgegenständen}."
+  },
+  {
+    "id": "del_btm_001",
+    "category": "Delikt: Betäubungsmittel",
+    "title": "Handel treiben",
+    "shortcut": "btm_handel",
+    "spintax": "{Der Beschuldigte|Der Angeschuldigte} wird verdächtigt, {unerlaubt Handel mit Betäubungsmitteln|gewerbsmäßig Handel mit BTM} getrieben zu haben. Er {führte|bewahrte} {eine nicht geringe Menge|eine erhebliche Menge} {Kokain|Marihuana|Amphetamin} {bei sich|in seiner Wohnung auf}, {welches zum gewinnbringenden Weiterverkauf bestimmt war|um es an Dritte zu veräußern}."
+  },
+  {
+    "id": "del_btm_002",
+    "category": "Delikt: Betäubungsmittel",
+    "title": "Besitz nicht geringe Menge",
+    "shortcut": "btm_besitz",
+    "spintax": "Bei einer {Durchsuchung|Kontrolle} {wurde beim Beschuldigten|fanden die Beamten} {eine Plastiktüte mit|mehrere Verkaufseinheiten mit} {rauschgiftverdächtiger Substanz|Betäubungsmitteln}. Ein {Vortest|Schnelltest} verlief {positiv|reagierte positiv} auf die Stoffgruppe. Die Menge überschreitet {den Grenzwert der nicht geringen Menge|die Grenze zur nicht geringen Menge} {deutlich|erheblich}."
+  },
+  {
+    "id": "del_betrug_001",
+    "category": "Delikt: Betrug",
+    "title": "Warenkreditbetrug",
+    "shortcut": "betr_ware",
+    "spintax": "{Der Beschuldigte|Der Täter} {bestellte|orderte} im Internet {Waren|Güter} unter {Angabe falscher Personalien|Verwendung einer falschen Identität}. Er handelte {in dem Wissen|in dem Bewusstsein}, {die Rechnung nicht begleichen zu können|weder zahlungswillig noch zahlungsfähig zu sein}. {Durch die Täuschung|Aufgrund dieses Irrtums} lieferte der Geschädigte die Ware aus."
+  },
+  {
+    "id": "del_raub_001",
+    "category": "Delikt: Raub",
+    "title": "Straßenraub",
+    "shortcut": "raub_str",
+    "spintax": "{Der Beschuldigte|Der Täter} trat dem Geschädigten {in den Weg|entgegen} und {forderte unter Androhung von Gewalt|verlangte unter Vorhalt eines Messers} die Herausgabe {von Bargeld und Handy|der mitgeführten Wertsachen}. {Aus Angst vor Repressalien|Eingeschüchtert durch die Drohung} {händigte das Opfer die Gegenstände aus|übergab der Geschädigte seine Wertsachen}."
+  },
+  {
+    "id": "sonst_001",
+    "category": "Sonstiges",
+    "title": "Alkohol/Drogenbeeinflussung",
+    "shortcut": "alk",
+    "spintax": "{Zur Tatzeit|Zum Zeitpunkt des Geschehens} stand der Beschuldigte {augenscheinlich|nach Einschätzung der Beamten} unter dem Einfluss von {Alkohol|Betäubungsmitteln}. {Ein Atemalkoholtest|Ein durchgeführter Test} ergab einen Wert von {Promille|... Promille}. {Dennoch|Gleichwohl} war er {in der Lage, das Unrecht seiner Tat einzusehen|fähig, dem Geschehen zu folgen}."
+  },
+  {
+    "id": "sonst_002",
+    "category": "Sonstiges",
+    "title": "Vorstrafen",
+    "shortcut": "vorstr",
+    "spintax": "Der Beschuldigte ist {polizeilich bereits mehrfach in Erscheinung getreten|bereits einschlägig vorbestraft}. {Der Auszug aus dem Bundeszentralregister|Das Führungszeugnis} weist {mehrere Eintragungen|diverse Vorverurteilungen} auf, {darunter auch einschlägige Delikte|insbesondere wegen gleichgelagerter Taten}. {Dies belegt|Dies zeigt}, dass {frühere Bestrafungen|bisherige Warnungen} {keine Wirkung zeigten|ihn nicht von weiteren Taten abhielten}."
+  },
+  {
+    "id": "schluss_001",
+    "category": "Abschluss",
+    "title": "Schlussformel",
+    "shortcut": "schluss",
+    "spintax": "{Aus diesen Gründen|Aufgrund der geschilderten Sachlage} ist der Erlass des Haftbefehls {geboten|erforderlich} und {rechtlich begründet|gesetzlich zulässig}."
+  }
+]
