@@ -17,13 +17,14 @@
   <meta name="apple-mobile-web-app-title" content="QuickHB">
   <meta name="msapplication-starturl" content="https://skaul94.github.io/QuickHB">
   
-  <link rel="stylesheet" href="lib/styles.css">
+  <link href="./css/tailwind.css" rel="stylesheet">
+  <link href="./css/styles.css" rel="stylesheet">
 
   <link rel="shortcut icon" href="favicon.ico">
   <meta name="description" content="QuickHB fills PDF forms using autocomplete" />
   <meta name="author" content="Sebastian Kaul" />
   <meta name="theme-color" content="#ffffff">
-  <meta property="og:image" content="image/quickfill-logo.png" />
+  <meta property="og:image" content="image/quickhb-logo.png" />
   <link rel="manifest" href="manifest.json" />
 </head>
 <body class="bg-gray-100 text-gray-800 p-6">
@@ -49,11 +50,10 @@
           class="w-full h-64 p-4 border rounded font-sans text-lg shadow-inner focus:ring-2 focus:ring-blue-500 outline-none"
           placeholder="Tippen Sie z.B. 'Flucht', 'Dieb' oder 'dv_std'..."></textarea>
   </div>
+
+  <div id="main"></div>
+
 </div>
-
-<hr>
-
-<div id="main"></div>
 
 <script type="module" src="index.js"></script>
 

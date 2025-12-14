@@ -30,10 +30,10 @@ function generateList(){
 
     div.innerHTML = `
       <div id="${id}">
-        <h2>${nr}. ${title}</h2>
+        <h2 class="text-4xl font-bold">${nr}. ${title}</h2>
         <div class="spintax">${spintax}</div>
-        <button class="random">Zufall!</button>
-        <button class="spin">Spin!</button>
+        <button type="button" class="random">Zufall</button>
+        <button type="button" class="spin">Spin</button>
         <div contenteditable="true" class="generated"></textarea>
       </div>
     `;
