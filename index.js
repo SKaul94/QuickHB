@@ -1,10 +1,14 @@
 import spintax from './data/hb-spintax.json' with { type: 'json' };
-
-const mainDiv = document.getElementById('main');
+import { spinRandomly, spinNext } from './lib/spintax.js';
+import { Autocomplete } from './lib/autocomplete.js';
+    
+const textarea = document.getElementById('tathergang');
 let gender = 'm';
+const getGender = _ => gender;
+new Autocomplete(textarea, spintax, getGender);
+
 const genderSwitch = document.querySelector('#genderswitch > input');
 const genderChoice = document.getElementById('genderchoice');
-const spintaxRegex = /\{([^{}]*)\}/;
 
 genderSwitch.addEventListener('click', event => {
   gender = gender === 'm' ? 'w' : 'm';
@@ -13,30 +17,8 @@ genderSwitch.addEventListener('click', event => {
   generateList();
 });
 
-function spinRandomly( text ) {
-  let match;
-  while ((match = spintaxRegex.exec(text)) !== null) {
-    const choices = match[1].split("|");
-    const randomChoice = choices[Math.floor(Math.random() * choices.length)];
-    text = text.replace(match[0], randomChoice);
-  }
-  return text;
-}
-
-function* spinNext( text ){
-  const match = spintaxRegex.exec(text);
-  if (match !== null) {
-    const choices = match[1].split("|");
-    for (let nextChoice = 0; nextChoice < choices.length; nextChoice++){
-      const newText = text.replace(match[0], choices[nextChoice]);
-      yield* spinNext( newText );
-    }
-  } else {
-    yield text;
-  }
-}
-
-generateList();
+const mainDiv = document.getElementById('main');
+generateList(); // inside main div
 
 function generateList(){
   let nr = 0;
