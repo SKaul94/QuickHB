@@ -32,6 +32,22 @@
     "spintax_w": "{Zudem|Darüber hinaus} {konnten am Tatort Spuren gesichert werden|fanden sich daktyloskopische Spuren}, die {der Beschuldigten|ihr} {zweifelsfrei|eindeutig} {zuzuordnen sind|zugeordnet werden konnten}."
   },
   {
+    "id": "bew_003",
+    "category": "Beweislage",
+    "title": "Geständnis / Einlassung",
+    "shortcut": "bew_gest",
+    "spintax_m": "{Der Beschuldigte|Der Festgenommene} hat sich {zum Tatvorwurf eingelassen|zur Sache geäußert} und {die Tat eingeräumt|ein Geständnis abgelegt|seine Beteiligung gestanden}. {Seine Angaben|Die Schilderungen des Beschuldigten} {decken sich|stimmen überein} mit {den objektiven Spuren|den Ermittlungsergebnissen|den bisherigen Erkenntnissen}.",
+    "spintax_w": "{Die Beschuldigte|Die Festgenommene} hat sich {zum Tatvorwurf eingelassen|zur Sache geäußert} und {die Tat eingeräumt|ein Geständnis abgelegt|seine Beteiligung gestanden}. {Ihre Angaben|Die Schilderungen der Beschuldigten} {decken sich|stimmen überein} mit {den objektiven Spuren|den Ermittlungsergebnissen|den bisherigen Erkenntnissen}."
+  },
+  {
+    "id": "bew_004",
+    "category": "Beweislage",
+    "title": "Videoüberwachung",
+    "shortcut": "bew_vid",
+    "spintax_m": "{Das Tatgeschehen|Der Ablauf der Tat} wurde durch {eine Videoüberwachungsanlage|die installierten Überwachungskameras} {aufgezeichnet|dokumentiert}. {Auf den Aufnahmen|Bei der Auswertung des Videomaterials} ist {zu erkennen|deutlich sichtbar}, wie {der Beschuldigte|eine Person, bei der es sich augenscheinlich um den Beschuldigten handelt,} {die Tat begeht|handelt}.",
+    "spintax_w": "{Das Tatgeschehen|Der Ablauf der Tat} wurde durch {eine Videoüberwachungsanlage|die installierten Überwachungskameras} {aufgezeichnet|dokumentiert}. {Auf den Aufnahmen|Bei der Auswertung des Videomaterials} ist {zu erkennen|deutlich sichtbar}, wie {die Beschuldigte|eine Person, bei der es sich augenscheinlich um die Beschuldigte handelt,} {die Tat begeht|handelt}."
+  },
+  {
     "id": "haft_001",
     "category": "Haftgrund: Fluchtgefahr",
     "title": "Fehlende soziale Bindung",
@@ -56,6 +72,30 @@
     "spintax_w": "{Die Beschuldigte|Die Tatverdächtige} unterhält {Kontakte|Beziehungen} ins Ausland. Es ist {zu befürchten|anzunehmen}, dass sie sich {unter Ausnutzung dieser Kontakte|mithilfe ihrer Verbindungen} absetzen wird, um sich {der Strafverfolgung|dem Zugriff} zu entziehen."
   },
   {
+    "id": "haft_004",
+    "category": "Haftgrund: Fluchtgefahr",
+    "title": "Untertauchen in der Anonymität",
+    "shortcut": "flucht_anon",
+    "spintax_m": "Es besteht die {Gefahr|konkrete Besorgnis}, dass der Beschuldigte {in die Anonymität einer Großstadt|in unbekannte Aufenthaltsorte} untertaucht. {In der Vergangenheit|Bereits früher} hat er gezeigt, dass er {bereit ist, seinen Aufenthalt zu verschleiern|seinen Aufenthaltsort verborgen hält}.",
+    "spintax_w": "Es besteht die {Gefahr|konkrete Besorgnis}, dass die Beschuldigte {in die Anonymität einer Großstadt|in unbekannte Aufenthaltsorte} untertaucht. {In der Vergangenheit|Bereits früher} hat sie gezeigt, dass sie {bereit ist, ihren Aufenthalt zu verschleiern|ihren Aufenthaltsort verborgen hält}."
+  },
+  {
+    "id": "haft_005",
+    "category": "Haftgrund: Verdunkelung",
+    "title": "Einwirkung auf Zeugen",
+    "shortcut": "verd_zeug",
+    "spintax_m": "Es besteht der Haftgrund der {Verdunkelungsgefahr|Verdunklungsgefahr} gemäß § 112 Abs. 2 Nr. 3 StPO. Das Verhalten des Beschuldigten {lässt den dringenden Verdacht zu|begründet die Besorgnis}, dass er {auf Zeugen einwirken|Mitbeschuldigte beeinflussen} wird, um {die Wahrheitsfindung zu erschweren|Aussagen zu seinen Gunsten zu manipulieren}. {Konkret hat er bereits versucht,|Es liegen Hinweise vor, dass er plant,} {Kontakt zu Zeugen aufzunehmen|Dritte unter Druck zu setzen}.",
+    "spintax_w": "Es besteht der Haftgrund der {Verdunkelungsgefahr|Verdunklungsgefahr} gemäß § 112 Abs. 2 Nr. 3 StPO. Das Verhalten der Beschuldigten {lässt den dringenden Verdacht zu|begründet die Besorgnis}, dass sie {auf Zeugen einwirken|Mitbeschuldigte beeinflussen} wird, um {die Wahrheitsfindung zu erschweren|Aussagen zu ihren Gunsten zu manipulieren}. {Konkret hat sie bereits versucht,|Es liegen Hinweise vor, dass sie plant,} {Kontakt zu Zeugen aufzunehmen|Dritte unter Druck zu setzen}."
+  },
+  {
+    "id": "haft_006",
+    "category": "Haftgrund: Verdunkelung",
+    "title": "Beweismittelvernichtung",
+    "shortcut": "verd_bew",
+    "spintax_m": "Es ist {zu befürchten|davon auszugehen}, dass der Beschuldigte {Beweismittel vernichten|Spuren beseitigen|unterlagen beiseite schaffen} wird, wenn er auf freiem Fuß bleibt. {Insbesondere|Vor allem} der Zugriff auf {elektronische Datenträger|noch nicht sichergestellte Dokumente} könnte {die Ermittlungen gefährden|den Untersuchungserfolg vereiteln}.",
+    "spintax_w": "Es ist {zu befürchten|davon auszugehen}, dass die Beschuldigte {Beweismittel vernichten|Spuren beseitigen|unterlagen beiseite schaffen} wird, wenn sie auf freiem Fuß bleibt. {Insbesondere|Vor allem} der Zugriff auf {elektronische Datenträger|noch nicht sichergestellte Dokumente} könnte {die Ermittlungen gefährden|den Untersuchungserfolg vereiteln}."
+  },
+  {
     "id": "verd_001",
     "category": "Haftgrund: Verdunkelung",
     "title": "Einwirkung auf Zeugen",
@@ -72,12 +112,28 @@
     "spintax_w": "Die U-Haft ist {verhältnismäßig|angemessen}. {Mildere Mittel|Weniger einschneidende Maßnahmen} sind {nicht ausreichend|ungeeignet}, um sicherzustellen, dass sie sich dem Verfahren stellt."
   },
   {
+    "id": "verh_002",
+    "category": "Verhältnismäßigkeit",
+    "title": "Mildere Mittel ungeeignet",
+    "shortcut": "verh_mild",
+    "spintax_m": "{Eine Meldeauflage|Die Abgabe des Reisepasses|Eine Kautionsleistung} bietet {keine hinreichende Gewähr|keine ausreichende Sicherheit} dafür, dass sich der Beschuldigte {dem Verfahren stellt|dem Zugriff der Strafverfolgungsbehörden zur Verfügung hält}. {Aufgrund der hohen Fluchtgefahr|Wegen der konkreten Verdunkelungsgefahr} ist der Vollzug der Haft {unerlässlich|zwingend geboten}.",
+    "spintax_w": "{Eine Meldeauflage|Die Abgabe des Reisepasses|Eine Kautionsleistung} bietet {keine hinreichende Gewähr|keine ausreichende Sicherheit} dafür, dass sich die Beschuldigte {dem Verfahren stellt|dem Zugriff der Strafverfolgungsbehörden zur Verfügung hält}. {Aufgrund der hohen Fluchtgefahr|Wegen der konkreten Verdunkelungsgefahr} ist der Vollzug der Haft {unerlässlich|zwingend geboten}."
+  },
+  {
     "id": "del_kv_001",
     "category": "Delikt: Körperverletzung",
     "title": "Tathergang Schlag/Tritt",
     "shortcut": "kv_schlag",
     "spintax_m": "{Der Beschuldigte|Der Täter} {versetzte|gab} dem Opfer {einen Faustschlag|einen Schlag}. {Anschließend|Danach} {trat er|trat der Angreifer} auf den {am Boden Liegenden|Wehrlosen} ein.",
     "spintax_w": "{Die Beschuldigte|Die Täterin} {versetzte|gab} dem Opfer {einen Faustschlag|einen Schlag}. {Anschließend|Danach} {trat sie|trat die Angreiferin} auf den {am Boden Liegenden|Wehrlosen} ein."
+  },
+  {
+    "id": "del_kv_002",
+    "category": "Delikt: Körperverletzung",
+    "title": "Gefährliches Werkzeug",
+    "shortcut": "kv_werkz",
+    "spintax_m": "{Bei der Tat|Während der Auseinandersetzung} verwendete der Beschuldigte {ein Messer|einen Schlagstock|eine zerbrochene Glasflasche}, mithin ein {gefährliches Werkzeug|einen gefährlichen Gegenstand}. Er {führte damit Stichbewegungen aus|schlug damit zu}, {wobei er Verletzungen billigend in Kauf nahm|um den Geschädigten erheblich zu verletzen}.",
+    "spintax_w": "{Bei der Tat|Während der Auseinandersetzung} verwendete die Beschuldigte {ein Messer|einen Schlagstock|eine zerbrochene Glasflasche}, mithin ein {gefährliches Werkzeug|einen gefährlichen Gegenstand}. Sie {führte damit Stichbewegungen aus|schlug damit zu}, {wobei sie Verletzungen billigend in Kauf nahm|um den Geschädigten erheblich zu verletzen}."
   },
   {
     "id": "del_dieb_001",
@@ -88,12 +144,44 @@
     "spintax_w": "{Die Beschuldigte|Die Täterin} {steckte|verbarg} {die Ware|das Diebesgut} {in ihre Jackentasche|in ihren Rucksack}. Sie verließ den Kassenbereich, {ohne zu bezahlen|ohne den Kaufpreis zu entrichten}."
   },
   {
+    "id": "del_dieb_002",
+    "category": "Delikt: Diebstahl",
+    "title": "Einbruchsdiebstahl",
+    "shortcut": "dieb_einbr",
+    "spintax_m": "{Zur Nachtzeit|Im Schutz der Dunkelheit} {verschaffte sich der Beschuldigte Zutritt|drang der Täter ein} in {das Objekt|die Wohnung|das Geschäftslokal}, indem er {ein Fenster aufhebelte|die Tür aufbrach|die Scheibe einschlug}. {Im Inneren|Dort} {durchsuchte er|durchwühlte er} {die Räumlichkeiten|Schränke und Schubladen} nach {Stehlenswertem|Wertgegenständen}.",
+    "spintax_w": "{Zur Nachtzeit|Im Schutz der Dunkelheit} {verschaffte sich die Beschuldigte Zutritt|drang der Täter ein} in {das Objekt|die Wohnung|das Geschäftslokal}, indem sie {ein Fenster aufhebelte|die Tür aufbrach|die Scheibe einschlug}. {Im Inneren|Dort} {durchsuchte sie|durchwühlte sie} {die Räumlichkeiten|Schränke und Schubladen} nach {Stehlenswertem|Wertgegenständen}."
+  },
+  {
     "id": "del_btm_001",
     "category": "Delikt: Betäubungsmittel",
     "title": "Handel treiben",
     "shortcut": "btm_handel",
     "spintax_m": "{Der Beschuldigte|Er} wird verdächtigt, {unerlaubt Handel|gewerbsmäßig Handel} mit BTM getrieben zu haben. Er {führte|bewahrte} {Drogen|Rauschgift} {bei sich|in seiner Wohnung} auf.",
     "spintax_w": "{Die Beschuldigte|Sie} wird verdächtigt, {unerlaubt Handel|gewerbsmäßig Handel} mit BTM getrieben zu haben. Sie {führte|bewahrte} {Drogen|Rauschgift} {bei sich|in ihrer Wohnung} auf."
+  },
+  {
+    "id": "del_btm_002",
+    "category": "Delikt: Betäubungsmittel",
+    "title": "Besitz nicht geringe Menge",
+    "shortcut": "btm_besitz",
+    "spintax_m": "Bei einer {Durchsuchung|Kontrolle} {wurde beim Beschuldigten|fanden die Beamten} {eine Plastiktüte mit|mehrere Verkaufseinheiten mit} {rauschgiftverdächtiger Substanz|Betäubungsmitteln}. Ein {Vortest|Schnelltest} verlief {positiv|reagierte positiv} auf die Stoffgruppe. Die Menge überschreitet {den Grenzwert der nicht geringen Menge|die Grenze zur nicht geringen Menge} {deutlich|erheblich}.",
+    "spintax_w": "Bei einer {Durchsuchung|Kontrolle} {wurde bei der Beschuldigten|fanden die Beamten} {eine Plastiktüte mit|mehrere Verkaufseinheiten mit} {rauschgiftverdächtiger Substanz|Betäubungsmitteln}. Ein {Vortest|Schnelltest} verlief {positiv|reagierte positiv} auf die Stoffgruppe. Die Menge überschreitet {den Grenzwert der nicht geringen Menge|die Grenze zur nicht geringen Menge} {deutlich|erheblich}."
+  },
+  {
+    "id": "del_betrug_001",
+    "category": "Delikt: Betrug",
+    "title": "Warenkreditbetrug",
+    "shortcut": "betr_ware",
+    "spintax_m": "{Der Beschuldigte|Der Täter} {bestellte|orderte} im Internet {Waren|Güter} unter {Angabe falscher Personalien|Verwendung einer falschen Identität}. Er handelte {in dem Wissen|in dem Bewusstsein}, {die Rechnung nicht begleichen zu können|weder zahlungswillig noch zahlungsfähig zu sein}. {Durch die Täuschung|Aufgrund dieses Irrtums} lieferte der Geschädigte die Ware aus.",
+    "spintax_w": "{Die Beschuldigte|Die Täterin} {bestellte|orderte} im Internet {Waren|Güter} unter {Angabe falscher Personalien|Verwendung einer falschen Identität}. Sie handelte {in dem Wissen|in dem Bewusstsein}, {die Rechnung nicht begleichen zu können|weder zahlungswillig noch zahlungsfähig zu sein}. {Durch die Täuschung|Aufgrund dieses Irrtums} lieferte der Geschädigte die Ware aus."
+  },
+  {
+    "id": "del_raub_001",
+    "category": "Delikt: Raub",
+    "title": "Straßenraub",
+    "shortcut": "raub_str",
+    "spintax_m": "{Der Beschuldigte|Der Täter} trat dem Geschädigten {in den Weg|entgegen} und {forderte unter Androhung von Gewalt|verlangte unter Vorhalt eines Messers} die Herausgabe {von Bargeld und Handy|der mitgeführten Wertsachen}. {Aus Angst vor Repressalien|Eingeschüchtert durch die Drohung} {händigte das Opfer die Gegenstände aus|übergab der Geschädigte seine Wertsachen}.",
+    "spintax_w": "{Die Beschuldigte|Die Täterin} trat dem Geschädigten {in den Weg|entgegen} und {forderte unter Androhung von Gewalt|verlangte unter Vorhalt eines Messers} die Herausgabe {von Bargeld und Handy|der mitgeführten Wertsachen}. {Aus Angst vor Repressalien|Eingeschüchtert durch die Drohung} {händigte das Opfer die Gegenstände aus|übergab der Geschädigte seine Wertsachen}."
   },
   {
     "id": "sonst_001",
