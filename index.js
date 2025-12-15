@@ -17,6 +17,15 @@ genderSwitch.addEventListener('click', event => {
   generateList();
 });
 
+const copyTextSpan = document.getElementById('copytext');
+copyTextSpan.addEventListener('click', async event => {
+  try {
+    await navigator.clipboard.writeText(textarea.value);
+  } catch (err) {
+    console.error('Fehler beim Kopieren des Textes: ', err);
+  }
+});
+
 const mainDiv = document.getElementById('main');
 generateList(); // inside main div
 

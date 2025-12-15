@@ -18,6 +18,10 @@ video {
   height: auto;
 }
 
+.button {
+  cursor: pointer;
+}
+
 .stretch {
   field-sizing: content;
   width: 100%;
