@@ -26,6 +26,12 @@ copyTextSpan.addEventListener('click', async event => {
   }
 });
 
+const deleteTextSpan = document.getElementById('deletetext');
+deleteTextSpan.addEventListener('click', event => {
+  textarea.value = '';
+});
+
+
 const mainDiv = document.getElementById('main');
 generateList(); // inside main div
 
