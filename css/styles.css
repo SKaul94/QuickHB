@@ -18,6 +18,11 @@ video {
   height: auto;
 }
 
+.stretch {
+  field-sizing: content;
+  width: 100%;
+}
+
 .generated {
   margin: 0.5rem;
   padding: 12px;
