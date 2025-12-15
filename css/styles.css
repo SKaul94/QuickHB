@@ -22,6 +22,11 @@ video {
   cursor: pointer;
 }
 
+.button > svg:active {
+  cursor: grabbing;
+  transform: translateY(4px);
+}
+
 .stretch {
   field-sizing: content;
   width: 100%;
