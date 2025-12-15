@@ -82,10 +82,10 @@
   {
     "id": "haft_005",
     "category": "Haftgrund: Verdunkelung",
-    "title": "Einwirkung auf Zeugen",
+    "title": "Zeugenbeeinflussung",
     "shortcut": "verd_zeug",
-    "spintax_m": "Es besteht der Haftgrund der {Verdunkelungsgefahr|Verdunklungsgefahr} gemäß § 112 Abs. 2 Nr. 3 StPO. Das Verhalten des Beschuldigten {lässt den dringenden Verdacht zu|begründet die Besorgnis}, dass er {auf Zeugen einwirken|Mitbeschuldigte beeinflussen} wird, um {die Wahrheitsfindung zu erschweren|Aussagen zu seinen Gunsten zu manipulieren}. {Konkret hat er bereits versucht,|Es liegen Hinweise vor, dass er plant,} {Kontakt zu Zeugen aufzunehmen|Dritte unter Druck zu setzen}.",
-    "spintax_w": "Es besteht der Haftgrund der {Verdunkelungsgefahr|Verdunklungsgefahr} gemäß § 112 Abs. 2 Nr. 3 StPO. Das Verhalten der Beschuldigten {lässt den dringenden Verdacht zu|begründet die Besorgnis}, dass sie {auf Zeugen einwirken|Mitbeschuldigte beeinflussen} wird, um {die Wahrheitsfindung zu erschweren|Aussagen zu ihren Gunsten zu manipulieren}. {Konkret hat sie bereits versucht,|Es liegen Hinweise vor, dass sie plant,} {Kontakt zu Zeugen aufzunehmen|Dritte unter Druck zu setzen}."
+    "spintax_m": "Es besteht der Haftgrund der {Verdunkelungsgefahr|Beweismanipulation|Zeugenbeeinflussung} gemäß § 112 Abs. 2 Nr. 3 StPO. Das Verhalten des Beschuldigten {lässt den dringenden Verdacht zu|begründet die Besorgnis}, dass er {auf Zeugen einwirken|Mitbeschuldigte beeinflussen} wird, um {die Wahrheitsfindung zu erschweren|Aussagen zu seinen Gunsten zu manipulieren}. {Konkret hat er bereits versucht,|Es liegen Hinweise vor, dass er plant,} {Kontakt zu Zeugen aufzunehmen|Dritte unter Druck zu setzen}.",
+    "spintax_w": "Es besteht der Haftgrund der {Verdunkelungsgefahr|Beweismanipulation|Zeugenbeeinflussung} gemäß § 112 Abs. 2 Nr. 3 StPO. Das Verhalten der Beschuldigten {lässt den dringenden Verdacht zu|begründet die Besorgnis}, dass sie {auf Zeugen einwirken|Mitbeschuldigte beeinflussen} wird, um {die Wahrheitsfindung zu erschweren|Aussagen zu ihren Gunsten zu manipulieren}. {Konkret hat sie bereits versucht,|Es liegen Hinweise vor, dass sie plant,} {Kontakt zu Zeugen aufzunehmen|Dritte unter Druck zu setzen}."
   },
   {
     "id": "haft_006",
@@ -97,11 +97,11 @@
   },
   {
     "id": "verd_001",
-    "category": "Haftgrund: Verdunkelung",
-    "title": "Einwirkung auf Zeugen",
-    "shortcut": "verd_zeug",
-    "spintax_m": "Es besteht {Verdunkelungsgefahr|Verdunklungsgefahr}. Das Verhalten des Beschuldigten {lässt vermuten|begründet die Besorgnis}, dass er {auf Zeugen einwirken|Mitbeschuldigte beeinflussen} wird, um {seine Position zu verbessern|Aussagen zu seinen Gunsten zu manipulieren}.",
-    "spintax_w": "Es besteht {Verdunkelungsgefahr|Verdunklungsgefahr}. Das Verhalten der Beschuldigten {lässt vermuten|begründet die Besorgnis}, dass sie {auf Zeugen einwirken|Mitbeschuldigte beeinflussen} wird, um {ihre Position zu verbessern|Aussagen zu ihren Gunsten zu manipulieren}."
+    "category": "Haftgrund: Verdunkelungsgefahr",
+    "title": "Verdunkelungsgefahr",
+    "shortcut": "verd_verd",
+    "spintax_m": "Es besteht Verdunkelungsgefahr. Das Verhalten des Beschuldigten {lässt vermuten|begründet die Besorgnis}, dass er {auf Zeugen einwirken|Mitbeschuldigte beeinflussen} wird, um {seine Position zu verbessern|Aussagen zu seinen Gunsten zu manipulieren}.",
+    "spintax_w": "Es besteht Verdunkelungsgefahr. Das Verhalten der Beschuldigten {lässt vermuten|begründet die Besorgnis}, dass sie {auf Zeugen einwirken|Mitbeschuldigte beeinflussen} wird, um {ihre Position zu verbessern|Aussagen zu ihren Gunsten zu manipulieren}."
   },
   {
     "id": "verh_001",
