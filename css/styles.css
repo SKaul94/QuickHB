@@ -18,6 +18,18 @@ video {
   height: auto;
 }
 
+.autocomplete-list {
+  cursor: pointer;
+  padding-inline-start: 0.3rem;
+}
+
+.placeholder {
+  font-style: italic;
+  font-weight: lighter;
+  font-size: small;
+  color: #555555;
+}
+
 .button {
   cursor: pointer;
 }

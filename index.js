@@ -2,10 +2,10 @@ import spintax from './data/hb-spintax.json' with { type: 'json' };
 import { spinRandomly, spinNext } from './lib/spintax.js';
 import { Autocomplete } from './lib/autocomplete.js';
     
-const textarea = document.getElementById('tathergang');
+const editorDiv = document.getElementById('tathergang'); 
 let gender = 'm';
 const getGender = _ => gender;
-new Autocomplete(textarea, spintax, getGender);
+new Autocomplete(editorDiv, spintax, getGender);
 
 const genderSwitch = document.querySelector('#genderswitch > input');
 const genderChoice = document.getElementById('genderchoice');
@@ -20,7 +20,7 @@ genderSwitch.addEventListener('click', event => {
 const copyTextSpan = document.getElementById('copytext');
 copyTextSpan.addEventListener('click', async event => {
   try {
-    await navigator.clipboard.writeText(textarea.value);
+    await navigator.clipboard.writeText(editorDiv.innerText);
   } catch (err) {
     console.error('Fehler beim Kopieren des Textes: ', err);
   }
@@ -28,7 +28,7 @@ copyTextSpan.addEventListener('click', async event => {
 
 const deleteTextSpan = document.getElementById('deletetext');
 deleteTextSpan.addEventListener('click', event => {
-  textarea.value = '';
+  editorDiv.innerText = '';
 });
 
 
@@ -49,18 +49,18 @@ function generateList(){
         <div class="spintax">${spintax}</div>
         <button type="button" class="random">Zufall</button>
         <button type="button" class="spin">Spin</button>
-        <div contenteditable="true" class="generated"></textarea>
+        <div contenteditable="true" class="generated"></div>
       </div>
     `;
     mainDiv.appendChild( div );
 
-    const textarea = div.querySelector('.generated');
+    const generatedDiv = div.querySelector('.generated');
     let spinGenerator = spinNext( spintax );
-    textarea.innerText = spinGenerator.next().value;
+    generatedDiv.innerText = spinGenerator.next().value;
 
     const randomButton = div.querySelector('.random');
     randomButton.addEventListener('click', event => {
-      textarea.innerText = spinRandomly( spintax );
+      generatedDiv.innerText = spinRandomly( spintax );
     });
 
     const spinButton = div.querySelector('.spin');
@@ -69,11 +69,11 @@ function generateList(){
       count += 1;
       const nextValue = spinGenerator.next().value;
       if ( nextValue ){
-        textarea.innerText = nextValue;
+        generatedDiv.innerText = nextValue;
       } else {
         // start fresh
         spinGenerator = spinNext( spintax );
-        textarea.innerText = `Alle ${count} Varianten angezeigt.`;
+        generatedDiv.innerText = `Alle ${count} Varianten angezeigt.`;
         count = 0;
       }
     });
