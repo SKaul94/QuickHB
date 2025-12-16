@@ -3,6 +3,17 @@ import { spinRandomly, spinNext } from './lib/spintax.js';
 import { Autocomplete } from './lib/autocomplete.js';
     
 const editorDiv = document.getElementById('tathergang'); 
+editorDiv.innerHTML = `<span id="placeholder">${editorDiv.getAttribute('placeholder')}</span>`;
+const placeholderListener = event => {
+  editorDiv.innerText = '';
+  editorDiv.removeEventListener('click', placeholderListener);
+  editorDiv.removeEventListener('input', placeholderListener);
+  editorDiv.focus();
+};
+editorDiv.addEventListener('click', placeholderListener );
+editorDiv.addEventListener('input', placeholderListener );
+editorDiv.focus();
+
 let gender = 'm';
 const getGender = _ => gender;
 new Autocomplete(editorDiv, spintax, getGender);
@@ -29,6 +40,7 @@ copyTextSpan.addEventListener('click', async event => {
 const deleteTextSpan = document.getElementById('deletetext');
 deleteTextSpan.addEventListener('click', event => {
   editorDiv.innerText = '';
+  editorDiv.focus();
 });
 
 

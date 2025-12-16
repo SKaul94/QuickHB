@@ -23,15 +23,9 @@ video {
   padding-inline-start: 0.3rem;
 }
 
-.placeholder {
-  font-style: italic;
-  font-weight: lighter;
-  font-size: small;
-  color: #555555;
-}
-
 .button {
   cursor: pointer;
+  padding: 0.5rem;
 }
 
 .button > svg:active {
@@ -52,6 +46,13 @@ video {
   border-radius: 4px;
   background-color: #f8f8f8;
   font: inherit;
+}
+
+#placeholder {
+  font-style: italic;
+  font-weight: lighter;
+  font-size: small;
+  color: #555555;
 }
 
 #genderswitch {
