@@ -30,14 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         // 2. Indikator unter den aktiven Tab schieben
-        if (activeTab) {
-            const rect = activeTab.getBoundingClientRect();
-            const parentRect = navContainer.getBoundingClientRect();
-            
-            // Berechne Position relativ zum Container
-            indicator.style.width = `${rect.width}px`;
-            indicator.style.transform = `translateX(${rect.left - parentRect.left}px)`;
-        }
+        
 
         // 3. Inhalt anzeigen
         sections.forEach(section => {

@@ -36,15 +36,16 @@ body {
 
 /* --- Navigation / Tabs --- */
 .tabs-header {
-    position: relative;
     display: flex;
     border-bottom: 1px solid #eee;
     background: var(--bg-card);
     z-index: 10;
+    flex-wrap: wrap; /* Erlaubt Umbruch auf Mobile */
 }
 
 .tab-btn {
-    flex: 1;
+    /* ... Grundeinstellungen ... */
+    flex: 1 auto;
     padding: 16px;
     background: none;
     border: none;
@@ -56,6 +57,15 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     outline: none;
+    position: relative;
+    /* Wir malen den Strich als Hintergrundbild */
+    background-image: linear-gradient(var(--primary), var(--primary));
+    background-size: 0% 3px;     /* Startbreite: 0, Höhe: 3px */
+    background-repeat: no-repeat;
+    background-position: bottom center; /* Strich wächst aus der Mitte */
+    
+    /* Animation der Breite (background-size) */
+    transition: background-size 0.3s ease-in-out, color 0.3s ease;
 }
 
 .tab-btn:hover {
@@ -64,19 +74,7 @@ body {
 
 .tab-btn.active {
     color: var(--primary);
-}
-
-/* Der gleitende Indikator (der Strich unter dem Tab) */
-.tab-indicator {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 3px;
-    background-color: var(--primary);
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    transition: transform var(--anim-speed) cubic-bezier(0.4, 0.0, 0.2, 1), 
-                width var(--anim-speed) cubic-bezier(0.4, 0.0, 0.2, 1);
+    background-size: 100% 3px; /* Endbreite: 100% */
 }
 
 /* --- Content Views --- */
