@@ -17,7 +17,8 @@
   <meta name="apple-mobile-web-app-title" content="QuickHB">
   <meta name="msapplication-starturl" content="https://skaul94.github.io/QuickHB">
   
-  <link href="./css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/pdf-form.css">
+  <link rel="stylesheet" href="./css/styles.css">
 
   <link rel="shortcut icon" href="favicon.ico">
   <meta name="description" content="QuickHB fills PDF forms using autocomplete" />
@@ -26,42 +27,115 @@
   <meta property="og:image" content="image/quickhb-logo.png" />
   <link rel="manifest" href="manifest.json" />
 </head>
-<body class="bg-gray-100 text-gray-800 p-6">
-<noscript>
-  <h1>JavaScript ist ausgeschaltet. Bitte einschalten!</h1>
-</noscript>
+<body>
+  <noscript>
+    <h1>JavaScript ist ausgeschaltet. Bitte einschalten!</h1>
+  </noscript>
+  
+  <div class="app-container">
+      <!-- Navigation -->
+      <nav class="tabs-header" id="nav-container">
+          <button class="tab-btn" data-target="dashboard">Dashboard</button>
+          <button class="tab-btn" data-target="spintax">Spintax</button>
+          <button class="tab-btn" data-target="pdf">PDF</button>
+          <button class="tab-btn" data-target="profil">Profil</button>
+          <button class="tab-btn" data-target="einstellungen">Settings</button>
+          
+          <!-- Der animierte Strich -->
+          <div class="tab-indicator" id="indicator"></div>
+      </nav>
 
-<div>
-  <h1 class="shadow-font">QuickHB</h1>
-  <div id="genderswitch">
-    <input id="switch1" type="checkbox">
-    <label for="switch1">
-      <span class="buttonbackground">
-        <span class="buttonslider"></span>
-      </span>
-    </label>
-  </div><div id="genderchoice">männlich</div>
+      <!-- Inhalt -->
+      <main class="content-area">
+          
+          <!-- View 1: Dashboard -->
+          <section id="dashboard" class="view-section">
+              <h2>QuickHB Übersicht</h2>
+              <p>Willkommen zurück! Hier ist der aktuelle Status deiner Applikation.</p>
+              <div class="demo-card">
+                  <strong>Aktueller Status:</strong> Alles läuft stabil.
+              </div>
+              <div class="demo-card" style="border-color: #00c853;">
+                  <strong>ToDo:</strong> sonstige Einstiegs-Infos
+              </div>
+          </section>
 
-  <!-- Textarea -->
-  <div>
-      <label class="bold">Begründung / Tathergang eingeben: </label>
-      <span id="copytext" class="button" title="Text in den Zwischenspeicher kopieren"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
-      </svg></span>
-      <span id="deletetext" class="button" title="Diesen Text löschen">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
-          <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
-        </svg>
-      </span>
-      <div id="tathergang" contenteditable="true" class="generated" placeholder="Tippen Sie z.B. 'Flucht', 'Dieb' oder 'dv_std'..."></div>
+          <!-- View 2: Spintax -->
+          <section id="spintax" class="view-section">
+              <h2>QuickHB Spintax</h2>
+              <div id="genderswitch">
+                <input id="switch1" type="checkbox">
+                <label for="switch1">
+                  <span class="buttonbackground">
+                    <span class="buttonslider"></span>
+                  </span>
+                </label>
+              </div><div id="genderchoice">männlich</div>
+
+              <!-- Textarea -->
+              <div>
+                  <label class="bold">Begründung / Tathergang eingeben: </label>
+                  <span id="copytext" class="icon-button" title="Text in den Zwischenspeicher kopieren"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                  </svg></span>
+                  <span id="deletetext" class="icon-button" title="Diesen Text löschen">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
+                      <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
+                    </svg>
+                  </span>
+                  <div id="tathergang" contenteditable="true" class="generated" placeholder="Tippen Sie z.B. 'Flucht', 'Dieb' oder 'dv_std'..."></div>
+              </div>
+
+              <div id="spintax-list"></div>
+          </section>
+
+          <!-- View 3: PDF -->
+          <section id="pdf" class="view-section">
+              <h2>QuickHB PDF Editor</h2>
+              <input type="file" id="fileInput" accept=".pdf">
+              <button id="saveBtn" class="blue-button">Daten Loggen</button>
+
+              <div id="pdfContainer" style="margin-top: 20px;"></div>
+              <script type="module" src="./lib/pdf-form.js"></script>
+          </section>
+
+          <!-- View 4: Profil -->
+          <section id="profil" class="view-section">
+              <h2>QuickHB: Dein Profil</h2>
+              <p>Verwalte deine persönlichen Daten und Kontoeinstellungen.</p>
+              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                  <div style="width: 50px; height: 50px; background: #ddd; border-radius: 50%;"></div>
+                  <div>
+                      <strong>Max Mustermann</strong><br>
+                      <span style="font-size: 0.85rem;">max@beispiel.de</span>
+                  </div>
+              </div>
+              <p>Mitglied seit: 2023</p>
+          </section>
+
+          <!-- View 5: Einstellungen -->
+          <section id="einstellungen" class="view-section">
+              <h2>QuickHB Einstellungen</h2>
+              <p>Hier kannst du das Verhalten der App anpassen.</p>
+              
+              <div class="demo-card" style="border-color: #ff9800;">
+                  <label style="display: flex; align-items: center; justify-content: space-between;">
+                      <span>Benachrichtigungen</span>
+                      <input type="checkbox" checked>
+                  </label>
+              </div>
+              
+              <div class="demo-card" style="border-color: #ff9800;">
+                  <label style="display: flex; align-items: center; justify-content: space-between;">
+                      <span>Dark Mode</span>
+                      <input type="checkbox">
+                  </label>
+              </div>
+          </section>
+
+      </main>
   </div>
-
-  <div id="main"></div>
-
-</div>
-
-<script type="module" src="index.js"></script>
-
+  <script type="module" src="index.js"></script>
 </body>
 </html>

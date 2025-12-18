@@ -1,18 +1,104 @@
 import spintax from './data/hb-spintax.json' with { type: 'json' };
-import { spinRandomly, spinNext } from './lib/spintax.js';
+import { spintaxList } from './lib/spintax.js';
 import { Autocomplete } from './lib/autocomplete.js';
-    
+
+/**
+ * State Management & Router Logik
+ */
+document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll('.tab-btn');
+    const sections = document.querySelectorAll('.view-section');
+    const indicator = document.getElementById('indicator');
+    const navContainer = document.getElementById('nav-container');
+
+    // Funktion: UI basierend auf der Route aktualisieren
+    const updateUI = (routeId) => {
+        // Fallback, falls Route leer oder ungültig ist
+        if (!routeId || !document.getElementById(routeId)) {
+            routeId = 'dashboard';
+        }
+
+        // 1. Aktiven Tab finden und hervorheben
+        let activeTab = null;
+        tabs.forEach(tab => {
+            if (tab.dataset.target === routeId) {
+                tab.classList.add('active');
+                activeTab = tab;
+            } else {
+                tab.classList.remove('active');
+            }
+        });
+
+        // 2. Indikator unter den aktiven Tab schieben
+        if (activeTab) {
+            const rect = activeTab.getBoundingClientRect();
+            const parentRect = navContainer.getBoundingClientRect();
+            
+            // Berechne Position relativ zum Container
+            indicator.style.width = `${rect.width}px`;
+            indicator.style.transform = `translateX(${rect.left - parentRect.left}px)`;
+        }
+
+        // 3. Inhalt anzeigen
+        sections.forEach(section => {
+            if (section.id === routeId) {
+                section.classList.add('active');
+            } else {
+                section.classList.remove('active');
+            }
+        });
+    };
+
+    // Funktion: Navigation auslösen
+    const navigateTo = (routeId) => {
+        // Wenn wir schon dort sind, nichts tun (verhindert doppelte History-Einträge)
+        const currentHash = window.location.hash.replace('#', '');
+        if (currentHash === routeId) return;
+
+        // Push State für History (damit Back-Button geht)
+        history.pushState({ view: routeId }, null, `#${routeId}`);
+        
+        updateUI(routeId);
+    };
+
+    // Event Listener für Klicks auf Tabs
+    tabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            const targetId = tab.dataset.target;
+            navigateTo(targetId);
+        });
+    });
+
+    // Event Listener für den Back/Forward-Button des Browsers (History API)
+    window.addEventListener('popstate', (event) => {
+        // Hash aus der URL lesen
+        const routeId = window.location.hash.replace('#', '');
+        updateUI(routeId);
+    });
+
+    // Initialisierung beim Laden der Seite
+    const initialRoute = window.location.hash.replace('#', '');
+    updateUI(initialRoute);
+});
+
+/**
+ * Spintax Editor
+ */
 const editorDiv = document.getElementById('tathergang'); 
-editorDiv.innerHTML = `<span id="placeholder">${editorDiv.getAttribute('placeholder')}</span>`;
-const placeholderListener = event => {
-  editorDiv.innerText = '';
-  editorDiv.removeEventListener('click', placeholderListener);
-  editorDiv.removeEventListener('input', placeholderListener);
+addPlaceHolder(editorDiv);
+
+function addPlaceHolder(editorDiv){
+  editorDiv.innerHTML = `<span id="placeholder">${editorDiv.getAttribute('placeholder')}</span>`;
+  const placeholderListener = event => {
+    editorDiv.innerText = '';
+    editorDiv.removeEventListener('click', placeholderListener);
+    editorDiv.removeEventListener('input', placeholderListener);
+    editorDiv.focus();
+  };
+  editorDiv.addEventListener('click', placeholderListener );
+  editorDiv.addEventListener('input', placeholderListener );
   editorDiv.focus();
-};
-editorDiv.addEventListener('click', placeholderListener );
-editorDiv.addEventListener('input', placeholderListener );
-editorDiv.focus();
+}
 
 let gender = 'm';
 const getGender = _ => gender;
@@ -24,8 +110,9 @@ const genderChoice = document.getElementById('genderchoice');
 genderSwitch.addEventListener('click', event => {
   gender = gender === 'm' ? 'w' : 'm';
   genderChoice.innerText = gender === 'm' ? 'männlich' : 'weiblich';
-  mainDiv.innerHTML = '';
-  generateList();
+  const listDiv = document.getElementById('spintax-list');
+  listDiv.innerHTML = '';
+  spintaxList(listDiv, spintax, gender);
 });
 
 const copyTextSpan = document.getElementById('copytext');
@@ -44,50 +131,5 @@ deleteTextSpan.addEventListener('click', event => {
 });
 
 
-const mainDiv = document.getElementById('main');
-generateList(); // inside main div
+spintaxList(document.getElementById('spintax-list'), spintax, gender); // add list inside div
 
-function generateList(){
-  let nr = 0;
-  for (const item of spintax){
-    nr += 1;
-    const div = document.createElement('div');
-    const {id, title, spintax_m, spintax_w} = item;
-    const spintax = gender==='m' ? spintax_m : spintax_w;
-
-    div.innerHTML = `
-      <div id="${id}">
-        <h2 class="text-4xl font-bold">${nr}. ${title}</h2>
-        <div class="spintax">${spintax}</div>
-        <button type="button" class="random">Zufall</button>
-        <button type="button" class="spin">Spin</button>
-        <div contenteditable="true" class="generated"></div>
-      </div>
-    `;
-    mainDiv.appendChild( div );
-
-    const generatedDiv = div.querySelector('.generated');
-    let spinGenerator = spinNext( spintax );
-    generatedDiv.innerText = spinGenerator.next().value;
-
-    const randomButton = div.querySelector('.random');
-    randomButton.addEventListener('click', event => {
-      generatedDiv.innerText = spinRandomly( spintax );
-    });
-
-    const spinButton = div.querySelector('.spin');
-    let count = 0;
-    spinButton.addEventListener('click', event => {
-      count += 1;
-      const nextValue = spinGenerator.next().value;
-      if ( nextValue ){
-        generatedDiv.innerText = nextValue;
-      } else {
-        // start fresh
-        spinGenerator = spinNext( spintax );
-        generatedDiv.innerText = `Alle ${count} Varianten angezeigt.`;
-        count = 0;
-      }
-    });
-  }
-}
