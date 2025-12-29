@@ -31,6 +31,7 @@
   <noscript>
     <h1>JavaScript ist ausgeschaltet. Bitte einschalten!</h1>
   </noscript>
+  <script type="module" src="./lib/gender-switch.js"></script>
   
   <div class="app-container">
       <!-- Navigation -->
@@ -60,14 +61,7 @@
           <!-- View 2: Spintax -->
           <section id="spintax" class="view-section">
               <h2>QuickHB Spintax</h2>
-              <div id="genderswitch">
-                <input id="switch1" type="checkbox">
-                <label for="switch1">
-                  <span class="buttonbackground">
-                    <span class="buttonslider"></span>
-                  </span>
-                </label>
-              </div><div id="genderchoice">männlich</div>
+              <gender-switch class="spintax"></gender-switch>
 
               <!-- Textarea -->
               <div>

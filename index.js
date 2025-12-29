@@ -1,6 +1,7 @@
 import spintax from './data/hb-spintax.json' with { type: 'json' };
 import { spintaxList } from './lib/spintax.js';
 import { Autocomplete } from './lib/autocomplete.js';
+import { getGender } from './lib/gender-switch.js';
 
 /**
  * State Management & Router Logik
@@ -93,19 +94,12 @@ function addPlaceHolder(editorDiv){
   editorDiv.focus();
 }
 
-let gender = 'm';
-const getGender = _ => gender;
 new Autocomplete(editorDiv, spintax, getGender);
 
-const genderSwitch = document.querySelector('#genderswitch > input');
-const genderChoice = document.getElementById('genderchoice');
-
-genderSwitch.addEventListener('click', event => {
-  gender = gender === 'm' ? 'w' : 'm';
-  genderChoice.innerText = gender === 'm' ? 'männlich' : 'weiblich';
+document.querySelector('gender-switch.spintax').addEventListener('gender-changed', event => {
   const listDiv = document.getElementById('spintax-list');
   listDiv.innerHTML = '';
-  spintaxList(listDiv, spintax, gender);
+  spintaxList(listDiv, spintax, getGender());
 });
 
 const copyTextSpan = document.getElementById('copytext');
@@ -124,5 +118,5 @@ deleteTextSpan.addEventListener('click', event => {
 });
 
 
-spintaxList(document.getElementById('spintax-list'), spintax, gender); // add list inside div
+spintaxList(document.getElementById('spintax-list'), spintax, getGender()); // add list inside div
 
