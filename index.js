@@ -78,45 +78,16 @@ document.addEventListener("DOMContentLoaded", () => {
 /**
  * Spintax Editor
  */
-const editorDiv = document.getElementById('tathergang'); 
-addPlaceHolder(editorDiv);
+document.querySelector('#spintax quick-hb-editor').database = spintax;
 
-function addPlaceHolder(editorDiv){
-  editorDiv.innerHTML = `<span id="placeholder">${editorDiv.getAttribute('placeholder')}</span>`;
-  const placeholderListener = event => {
-    editorDiv.innerText = '';
-    editorDiv.removeEventListener('click', placeholderListener);
-    editorDiv.removeEventListener('input', placeholderListener);
-    editorDiv.focus();
-  };
-  editorDiv.addEventListener('click', placeholderListener );
-  editorDiv.addEventListener('input', placeholderListener );
-  editorDiv.focus();
-}
-
-new Autocomplete(editorDiv, spintax, getGender);
-
+/**
+ * Gender Switch
+ */
 document.querySelector('gender-switch.spintax').addEventListener('gender-changed', event => {
   const listDiv = document.getElementById('spintax-list');
   listDiv.innerHTML = '';
   spintaxList(listDiv, spintax, getGender());
 });
-
-const copyTextSpan = document.getElementById('copytext');
-copyTextSpan.addEventListener('click', async event => {
-  try {
-    await navigator.clipboard.writeText(editorDiv.innerText);
-  } catch (err) {
-    console.error('Fehler beim Kopieren des Textes: ', err);
-  }
-});
-
-const deleteTextSpan = document.getElementById('deletetext');
-deleteTextSpan.addEventListener('click', event => {
-  editorDiv.innerText = '';
-  editorDiv.focus();
-});
-
 
 spintaxList(document.getElementById('spintax-list'), spintax, getGender()); // add list inside div
 
