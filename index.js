@@ -1,6 +1,7 @@
 import spintax from './data/hb-spintax.json' with { type: 'json' };
+import sectionSpintax from './data/section-spintax.json' with { type: 'json' };
+import structure from './data/structure.json' with { type: 'json' };
 import { spintaxList } from './lib/spintax.js';
-import { Autocomplete } from './lib/autocomplete.js';
 import { getGender } from './lib/gender-switch.js';
 
 /**
@@ -76,9 +77,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /**
- * Spintax Editor
+ * Spintax Editoren
  */
 document.querySelector('#spintax quick-hb-editor').database = spintax;
+const antrag1 = document.getElementById('antrag1');
+// Daten zuweisen (da es komplexe Arrays sind, macht man das in JS, nicht HTML Attribut)
+antrag1.database = sectionSpintax;
+antrag1.structure = structure;
+
 
 /**
  * Gender Switch

@@ -33,12 +33,14 @@
   </noscript>
   <script type="module" src="./lib/gender-switch.js"></script>
   <script type="module" src="./lib/quick-hb-editor.js"></script>
+  <script type="module" src="./lib/quick-hb-antrag.js"></script>
   
   <div class="app-container">
       <!-- Navigation -->
       <nav class="tabs-header" id="nav-container">
           <button class="tab-btn" data-target="dashboard">Dashboard</button>
           <button class="tab-btn" data-target="spintax">Spintax</button>
+          <button class="tab-btn" data-target="antrag">Antrag</button>
           <button class="tab-btn" data-target="pdf">PDF</button>
           <button class="tab-btn" data-target="profil">Profil</button>
           <button class="tab-btn" data-target="einstellungen">Settings</button>
@@ -67,7 +69,12 @@
               <div id="spintax-list"></div>
           </section>
 
-          <!-- View 3: PDF -->
+          <!-- View 3: Antrag -->
+          <section id="antrag" class="view-section">
+              <quick-hb-antrag id="antrag1"></quick-hb-antrag>
+          </section>
+
+          <!-- View 4: PDF -->
           <section id="pdf" class="view-section">
               <h2>QuickHB PDF Editor</h2>
               <input type="file" id="fileInput" accept=".pdf">
@@ -77,7 +84,7 @@
               <script type="module" src="./lib/pdf-form.js"></script>
           </section>
 
-          <!-- View 4: Profil -->
+          <!-- View 5: Profil -->
           <section id="profil" class="view-section">
               <h2>QuickHB: Dein Profil</h2>
               <p>Verwalte deine persönlichen Daten und Kontoeinstellungen.</p>
@@ -91,7 +98,7 @@
               <p>Mitglied seit: 2023</p>
           </section>
 
-          <!-- View 5: Einstellungen -->
+          <!-- View 6: Einstellungen -->
           <section id="einstellungen" class="view-section">
               <h2>QuickHB Einstellungen</h2>
               <p>Hier kannst du das Verhalten der App anpassen.</p>
