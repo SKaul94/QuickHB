@@ -1,17 +1,17 @@
-import spintax from './data/hb-spintax.json' with { type: 'json' };
-import sectionSpintax from './data/section-spintax.json' with { type: 'json' };
-import structure from './data/structure.json' with { type: 'json' };
+// import spintax from './data/hb-spintax.json' with { type: 'json' };
+// import sectionSpintax from './data/section-spintax.json' with { type: 'json' };
+// import structure from './data/structure.json' with { type: 'json' };
 import { spintaxList } from './lib/spintax.js';
 import { getGender } from './lib/gender-switch.js';
+import * as Idb from './lib/idb-keyval.js';
+import { INDEXEDDB_KEY, INDEXEDDB_KEY_STRUCTURE } from './lib/quick-hb-database.js';
 
 /**
  * State Management & Router Logik
  */
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     const tabs = document.querySelectorAll('.tab-btn');
     const sections = document.querySelectorAll('.view-section');
-    const indicator = document.getElementById('indicator');
-    const navContainer = document.getElementById('nav-container');
 
     // Funktion: UI basierend auf der Route aktualisieren
     const updateUI = (routeId) => {
@@ -74,26 +74,28 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialisierung beim Laden der Seite
     const initialRoute = window.location.hash.replace('#', '');
     updateUI(initialRoute);
+
+    /**
+     * Spintax Editoren
+     */
+    const antrag1 = document.getElementById('antrag1');
+    // Daten zuweisen (da es komplexe Arrays sind, macht man das in JS, nicht HTML Attribut)
+    antrag1.database = await Idb.get( INDEXEDDB_KEY );
+    let structure = await Idb.get( INDEXEDDB_KEY_STRUCTURE );
+    if ( ! structure ) {
+        // get list of sections from database
+        structure = [];
+        for ( const id of Object.keys( antrag1.database ) ) {
+            const section = antrag1.database[ id ].section;
+            if ( ! structure.includes( section ) ) structure.push( section );
+        }
+    }
+    antrag1.structure = structure;
+
 });
 
-/**
- * Spintax Editoren
- */
-document.querySelector('#spintax quick-hb-editor').database = spintax;
-const antrag1 = document.getElementById('antrag1');
-// Daten zuweisen (da es komplexe Arrays sind, macht man das in JS, nicht HTML Attribut)
-antrag1.database = sectionSpintax;
-antrag1.structure = structure;
 
 
-/**
- * Gender Switch
- */
-document.querySelector('gender-switch.spintax').addEventListener('gender-changed', event => {
-  const listDiv = document.getElementById('spintax-list');
-  listDiv.innerHTML = '';
-  spintaxList(listDiv, spintax, getGender());
-});
 
-spintaxList(document.getElementById('spintax-list'), spintax, getGender()); // add list inside div
+
 

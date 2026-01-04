@@ -218,7 +218,8 @@ p { line-height: 1.6; color: var(--text-muted); margin-bottom: 16px; }
   transition: background-color 0.2s ease;
 }
 
-.blue-button {
+.blue-button, 
+input[type=file] {
   padding: 0.3rem;
   margin-right: 0.3rem;
   font: inherit;
@@ -231,12 +232,14 @@ p { line-height: 1.6; color: var(--text-muted); margin-bottom: 16px; }
   cursor: pointer;
 }
 
-.blue-button:focus {
+.blue-button:focus,
+input[type=file]:focus {
   outline: none;
   background-color: deepskyblue;
 }
 
-.blue-button:active {
+.blue-button:active,
+input[type=file]:active {
   outline: none;
   background-color: deepskyblue;
   transform: translateY(6px);
