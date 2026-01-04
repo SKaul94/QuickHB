@@ -7,7 +7,7 @@ import * as Idb from './lib/idb-keyval.js';
 import { INDEXEDDB_KEY, INDEXEDDB_KEY_STRUCTURE } from './lib/quick-hb-database.js';
 
 /**
- * State Management & Router Logik
+ * State Management & Router Logik - Begin
  */
 document.addEventListener("DOMContentLoaded", async () => {
     const tabs = document.querySelectorAll('.tab-btn');
@@ -74,23 +74,25 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Initialisierung beim Laden der Seite
     const initialRoute = window.location.hash.replace('#', '');
     updateUI(initialRoute);
+ /**
+ * State Management & Router Logik - End
+ */   
 
     /**
-     * Spintax Editoren
+     * Global wiring of components via Events
      */
     const antrag1 = document.getElementById('antrag1');
-    // Daten zuweisen (da es komplexe Arrays sind, macht man das in JS, nicht HTML Attribut)
+    // initial assignment triggers re-rendering
     antrag1.database = await Idb.get( INDEXEDDB_KEY );
-    let structure = await Idb.get( INDEXEDDB_KEY_STRUCTURE );
-    if ( ! structure ) {
-        // get list of sections from database
-        structure = [];
-        for ( const id of Object.keys( antrag1.database ) ) {
-            const section = antrag1.database[ id ].section;
-            if ( ! structure.includes( section ) ) structure.push( section );
-        }
-    }
-    antrag1.structure = structure;
+    
+    const dashboard = document.getElementById('quick-dashboard');
+    const spintaxDatabase = document.getElementById('spintax-database');
+    spintaxDatabase.addEventListener('indexeddb-set', async event => { // load event
+        // on every load event, get the new database
+        antrag1.database = await Idb.get( INDEXEDDB_KEY );
+        // write the new message to the dashboard
+        dashboard.message = `New database loaded at ${new Date().toLocaleString('de-DE')}`;
+    });
 
 });
 
