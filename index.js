@@ -92,10 +92,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     dashboard.addEventListener('db-loaded', loadEventHandler );
 
     async function loadEventHandler( event ) {
+        const database = await Idb.get( INDEXEDDB_KEY );
         // on every load event, get the new database
-        antrag1.database = await Idb.get( INDEXEDDB_KEY );
+        antrag1.database = database;
         // write the new message to the dashboard
-        dashboard.message = `New database loaded at ${new Date().toLocaleString('de-DE')}`;
+        dashboard.message = `Neue Datenbank geladen ${new Date().toLocaleString('de-DE')}`;
+        dashboard.statistics = `Anzahl Spintax-Regeln: ${database?.length || 0}.`;
+
+        spintaxDatabase.database = database;
     }
 
 });
