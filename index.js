@@ -87,12 +87,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     
     const dashboard = document.getElementById('quick-dashboard');
     const spintaxDatabase = document.getElementById('spintax-database');
-    spintaxDatabase.addEventListener('indexeddb-set', async event => { // load event
+    
+    spintaxDatabase.addEventListener('indexeddb-set', loadEventHandler );
+    dashboard.addEventListener('db-loaded', loadEventHandler );
+
+    async function loadEventHandler( event ) {
         // on every load event, get the new database
         antrag1.database = await Idb.get( INDEXEDDB_KEY );
         // write the new message to the dashboard
         dashboard.message = `New database loaded at ${new Date().toLocaleString('de-DE')}`;
-    });
+    }
 
 });
 
