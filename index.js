@@ -81,25 +81,27 @@ document.addEventListener("DOMContentLoaded", async () => {
     /**
      * Global wiring of components via Events
      */
-    const antrag1 = document.getElementById('antrag1');
-    // initial assignment triggers re-rendering
-    antrag1.database = await Idb.get( INDEXEDDB_KEY );
-    
+    const appContainer = document.getElementById('app-container');
     const dashboard = document.getElementById('quick-dashboard');
     const spintaxDatabase = document.getElementById('spintax-database');
+    const antrag1 = document.getElementById('antrag1');
     
-    spintaxDatabase.addEventListener('indexeddb-set', loadEventHandler );
-    dashboard.addEventListener('db-loaded', loadEventHandler );
+    // initial assignment triggers re-rendering
+    databaseChangedEventHandler();
+    appContainer.addEventListener('database-changed', databaseChangedEventHandler );  
 
-    async function loadEventHandler( event ) {
+    async function databaseChangedEventHandler( event ) {
+        // Single Source of Truth = IndexedDB.
+        // get the new database from IndexedDB.
         const database = await Idb.get( INDEXEDDB_KEY );
-        // on every load event, get the new database
-        antrag1.database = database;
+          
+        // do not cause loops in event sending
         // write the new message to the dashboard
-        dashboard.message = `Neue Datenbank geladen ${new Date().toLocaleString('de-DE')}`;
-        dashboard.statistics = `Anzahl Spintax-Regeln: ${database?.length || 0}.`;
+        if ( event?.target !== dashboard ) dashboard.updateStatus();
 
-        spintaxDatabase.database = database;
+        if ( event?.target !== spintaxDatabase ) spintaxDatabase.database = database;
+
+        if ( event?.target !== antrag1 ) antrag1.database = database;
     }
 
 });
