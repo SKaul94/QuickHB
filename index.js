@@ -6,6 +6,8 @@ import { getGender } from './lib/gender-switch.js';
 import * as Idb from './lib/idb-keyval.js';
 import { INDEXEDDB_KEY, INDEXEDDB_KEY_STRUCTURE } from './lib/quick-hb-database.js';
 
+window.litDisableBundleWarning = true;
+
 /**
  * State Management & Router Logik - Begin
  */
@@ -79,29 +81,33 @@ document.addEventListener("DOMContentLoaded", async () => {
  */   
 
     /**
-     * Global wiring of components via Events
+     * Global wiring of all components via Events
      */
     const appContainer = document.getElementById('app-container');
-    const dashboard = document.getElementById('quick-dashboard');
-    const spintaxDatabase = document.getElementById('spintax-database');
-    const antrag1 = document.getElementById('antrag1');
+    const components = Array.from( document.querySelectorAll('.component') );
+    const antrag = document.getElementById('antrag1');
+    components.push( antrag.tableEditor );
     
     // initial assignment triggers re-rendering
     databaseChangedEventHandler();
-    appContainer.addEventListener('database-changed', databaseChangedEventHandler );  
+    appContainer.addEventListener('database-changed', databaseChangedEventHandler );   
 
     async function databaseChangedEventHandler( event ) {
         // Single Source of Truth = IndexedDB.
         // get the new database from IndexedDB.
         const database = await Idb.get( INDEXEDDB_KEY );
-          
-        // do not cause loops in event sending
-        // write the new message to the dashboard
-        if ( event?.target !== dashboard ) dashboard.updateStatus();
 
-        if ( event?.target !== spintaxDatabase ) spintaxDatabase.database = database;
-
-        if ( event?.target !== antrag1 ) antrag1.database = database;
+        for ( const component of components ) {
+            // do not cause loops in event sending
+            if ( event?.target !== component ) {
+                /**
+                 * uniform API for update (observer pattern)
+                 * @param {Array} database - is always fresh from the Single Source of Truth = IndexedDB.
+                 * @param {Event} event - contains details about what changed
+                 */
+                component.updateAfterEvent( database, event );
+            }
+        }
     }
 
 });
