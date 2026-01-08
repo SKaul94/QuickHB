@@ -1,5 +1,6 @@
 # Build and Release Folders
 tmp/
+tmp-looping/
 bin-debug/
 bin-release/
 [Oo]bj/
