@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     /**
      * Global wiring of all components via Events
+     * Observer Pattern
      */
     const appContainer = document.getElementById('app-container');
     const components = Array.from( document.querySelectorAll('.component') );
@@ -99,6 +100,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         for ( const component of components ) {
             // do not cause loops in event sending
+            // do not send update notification to yourself
             if ( event?.target !== component ) {
                 /**
                  * uniform API for update (observer pattern)
