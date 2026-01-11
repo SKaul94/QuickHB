@@ -23,7 +23,7 @@ body {
 }
 
 /* --- App Container --- */
-.app-container {
+#app-container {
     width: 100%;
     background: var(--bg-card);
     border-radius: var(--radius);
@@ -36,6 +36,8 @@ body {
 
 /* --- Navigation / Tabs --- */
 .tabs-header {
+    box-sizing: border-box;
+    margin: 0;
     display: flex;
     border-bottom: 1px solid #eee;
     background: var(--bg-card);
@@ -79,7 +81,8 @@ body {
 
 /* --- Content Views --- */
 .content-area {
-    flex: 1;
+    justify-content: center;
+    align-items: center;
     padding: 24px;
     position: relative;
     overflow-y: auto;
