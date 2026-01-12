@@ -34,14 +34,17 @@
   <script type="module" src="./lib/quick-hb-dashboard.js"></script>
   <script type="module" src="./lib/quick-hb-database.js"></script>
   <script type="module" src="./lib/quick-hb-antrag.js"></script>
+  <script type="module" src="./lib/json-form-editor.js"></script>
   
   <div id="app-container">
       <!-- Navigation -->
       <nav class="tabs-header" id="nav-container">
           <button class="tab-btn" data-target="dashboard">Dashboard</button>
-          <button class="tab-btn" data-target="spintax">Spintax</button>
+          <button class="tab-btn" data-target="person">Personalien</button>
           <button class="tab-btn" data-target="antrag">Antrag</button>
           <button class="tab-btn" data-target="pdf">PDF</button>
+          <button class="tab-btn" data-target="spintax">Spintax</button>
+          
           <!--
           <button class="tab-btn" data-target="profil">Profil</button>
           <button class="tab-btn" data-target="einstellungen">Settings</button>
@@ -61,7 +64,12 @@
               <quick-hb-database id="spintax-database" class="component"></quick-hb-database>
           </section>
 
-          <!-- View 3: Antrag -->
+          <!-- View 3: Personalien -->
+          <section id="person" class="view-section">
+              <json-form-editor id="person-editor"></json-form-editor >
+          </section>
+
+          <!-- View 4: Antrag -->
           <section id="antrag" class="view-section">
               <quick-hb-antrag id="antrag1" class="component"></quick-hb-antrag>
           </section>

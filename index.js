@@ -4,7 +4,7 @@
 import { spintaxList } from './lib/spintax.js';
 import { getGender } from './lib/gender-switch.js';
 import * as Idb from './lib/idb-keyval.js';
-import { INDEXEDDB_KEY, INDEXEDDB_KEY_STRUCTURE } from './lib/quick-hb-database.js';
+import { INDEXEDDB_KEY } from './lib/quick-hb-database.js';
 
 window.litDisableBundleWarning = true;
 
@@ -111,6 +111,17 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
         }
     }
+
+    /**
+     * Tabelle Personalien
+     */
+    const personEditor = document.getElementById('person-editor');
+    personEditor.fields = ['Familienname','Vorname' ];
+    // Zugriff auf die Echtzeit-Daten
+    personEditor.addEventListener('data-changed', (e) => {
+        console.log('Aktuelles Objekt:', e.detail.data);
+    });
+
 
 });
 
