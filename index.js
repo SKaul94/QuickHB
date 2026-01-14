@@ -4,7 +4,7 @@
 import { spintaxList } from './lib/spintax.js';
 import { getGender } from './lib/gender-switch.js';
 import * as Idb from './lib/idb-keyval.js';
-import { INDEXEDDB_KEY } from './lib/quick-hb-database.js';
+import { INDEXEDDB_SPINTAX_KEY } from './lib/quick-hb-database.js';
 
 window.litDisableBundleWarning = true;
 
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     async function databaseChangedEventHandler( event ) {
         // Single Source of Truth = IndexedDB.
         // get the new database from IndexedDB.
-        const database = await Idb.get( INDEXEDDB_KEY );
+        const database = await Idb.get( INDEXEDDB_SPINTAX_KEY );
 
         for ( const component of components ) {
             // do not cause loops in event sending
