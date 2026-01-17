@@ -1,125 +1,130 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-  <title>QuickHB</title>
-  <!--
+    <title>QuickHB</title>
+    <!--
     * @module index.html
     * @summary main HTML document
     * @version 0.0.1
     * @author Sebastian Kaul
     * @copyright (C) 2025 All Rights reserved by author
   -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="QuickHB">
-  <meta name="apple-mobile-web-app-title" content="QuickHB">
-  <meta name="msapplication-starturl" content="https://skaul94.github.io/QuickHB">
-  
-  <link rel="stylesheet" href="./css/pdf-form.css">
-  <link rel="stylesheet" href="./css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="QuickHB">
+    <meta name="apple-mobile-web-app-title" content="QuickHB">
+    <meta name="msapplication-starturl" content="https://skaul94.github.io/QuickHB">
 
-  <link rel="shortcut icon" href="favicon.ico">
-  <meta name="description" content="QuickHB fills PDF forms using autocomplete" />
-  <meta name="author" content="Sebastian Kaul" />
-  <meta name="theme-color" content="#ffffff">
-  <meta property="og:image" content="image/quickhb-logo.png" />
-  <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="./css/pdf-form.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="description" content="QuickHB fills PDF forms using autocomplete" />
+    <meta name="author" content="Sebastian Kaul" />
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:image" content="image/quickhb-logo.png" />
+    <link rel="manifest" href="manifest.json" />
 </head>
+
 <body>
-  <noscript>
-    <h1>JavaScript ist ausgeschaltet. Bitte einschalten!</h1>
-  </noscript>
-  <script type="module" src="./lib/quick-hb-dashboard.js"></script>
-  <script type="module" src="./lib/quick-hb-database.js"></script>
-  <script type="module" src="./lib/quick-hb-antrag.js"></script>
-  <script type="module" src="./lib/json-form-editor.js"></script>
-  
-  <div id="app-container">
-      <!-- Navigation -->
-      <nav class="tabs-header" id="nav-container">
-          <button class="tab-btn" data-target="dashboard">Dashboard</button>
-          <button class="tab-btn" data-target="person">Personalien</button>
-          <button class="tab-btn" data-target="antrag">Antrag</button>
-          <button class="tab-btn" data-target="pdf">PDF</button>
-          <button class="tab-btn" data-target="spintax">Spintax</button>
-          
-          <!--
+    <noscript>
+        <h1>JavaScript ist ausgeschaltet. Bitte einschalten!</h1>
+    </noscript>
+    <script type="module" src="./lib/quick-hb-dashboard.js"></script>
+    <script type="module" src="./lib/quick-hb-database.js"></script>
+    <script type="module" src="./lib/quick-hb-antrag.js"></script>
+    <script type="module" src="./lib/json-form-editor.js"></script>
+
+    <div id="app-container">
+        <!-- Navigation -->
+        <nav class="tabs-header" id="nav-container">
+            <button class="tab-btn" data-target="dashboard">Dashboard</button>
+            <button class="tab-btn" data-target="person">Personalien</button>
+            <button class="tab-btn" data-target="antrag">Antrag</button>
+            <button class="tab-btn" data-target="pdf">PDF</button>
+            <button class="tab-btn" data-target="spintax">Spintax</button>
+
+            <!--
           <button class="tab-btn" data-target="profil">Profil</button>
           <button class="tab-btn" data-target="einstellungen">Settings</button>
-          --> 
-      </nav>
+          -->
+        </nav>
 
-      <!-- Inhalt -->
-      <main class="content-area">
-          
-          <!-- View 1: Dashboard -->
-          <section id="dashboard" class="view-section">
-              <quick-hb-dashboard id="quick-dashboard" class="component"></quick-hb-dashboard>
-          </section>
+        <!-- Inhalt -->
+        <main class="content-area">
 
-          <!-- View 2: Spintax -->
-          <section id="spintax" class="view-section">
-              <quick-hb-database id="spintax-database" class="component"></quick-hb-database>
-          </section>
+            <!-- View 1: Dashboard -->
+            <section id="dashboard" class="view-section">
+                <quick-hb-dashboard id="quick-dashboard" class="component"></quick-hb-dashboard>
+            </section>
 
-          <!-- View 3: Personalien -->
-          <section id="person" class="view-section">
-              <json-form-editor id="person-editor"></json-form-editor >
-          </section>
+            <!-- View 2: Personalien -->
+            <section id="person" class="view-section">
+                <json-form-editor id="person-editor" class="component"></json-form-editor>
+            </section>
 
-          <!-- View 4: Antrag -->
-          <section id="antrag" class="view-section">
-              <quick-hb-antrag id="antrag1" class="component"></quick-hb-antrag>
-          </section>
+            <!-- View 3: Antrag -->
+            <section id="antrag" class="view-section">
+                <quick-hb-antrag id="antrag1" class="component"></quick-hb-antrag>
+            </section>
 
-          <!-- View 4: PDF -->
-          <section id="pdf" class="view-section">
-              <h2>QuickHB PDF Editor</h2>
-              <input type="file" id="fileInput" accept=".pdf">
-              <button id="saveBtn" class="blue-button">Daten Loggen</button>
+            <!-- View 4: PDF -->
+            <section id="pdf" class="view-section">
+                <h2>QuickHB PDF Editor</h2>
+                <input type="file" id="fileInput" accept=".pdf">
+                <button id="saveBtn" class="blue-button">Daten Loggen</button>
 
-              <div id="pdfContainer" style="margin-top: 20px;"></div>
-              <script type="module" src="./lib/pdf-form.js"></script>
-          </section>
+                <div id="pdfContainer" style="margin-top: 20px;"></div>
+                <script type="module" src="./lib/pdf-form.js"></script>
+            </section>
 
-          <!-- View 5: Profil -->
-          <section id="profil" class="view-section">
-              <h2>QuickHB: Dein Profil</h2>
-              <p>Verwalte deine persönlichen Daten und Kontoeinstellungen.</p>
-              <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                  <div style="width: 50px; height: 50px; background: #ddd; border-radius: 50%;"></div>
-                  <div>
-                      <strong>Max Mustermann</strong><br>
-                      <span style="font-size: 0.85rem;">max@beispiel.de</span>
-                  </div>
-              </div>
-              <p>Mitglied seit: 2023</p>
-          </section>
+            <!-- View 5: Spintax -->
+            <section id="spintax" class="view-section">
+                <quick-hb-database id="spintax-database" class="component"></quick-hb-database>
+            </section>
 
-          <!-- View 6: Einstellungen -->
-          <section id="einstellungen" class="view-section">
-              <h2>QuickHB Einstellungen</h2>
-              <p>Hier kannst du das Verhalten der App anpassen.</p>
-              
-              <div class="demo-card" style="border-color: #ff9800;">
-                  <label style="display: flex; align-items: center; justify-content: space-between;">
-                      <span>Benachrichtigungen</span>
-                      <input type="checkbox" checked>
-                  </label>
-              </div>
-              
-              <div class="demo-card" style="border-color: #ff9800;">
-                  <label style="display: flex; align-items: center; justify-content: space-between;">
-                      <span>Dark Mode</span>
-                      <input type="checkbox">
-                  </label>
-              </div>
-          </section>
 
-      </main>
-  </div>
-  <script type="module" src="index.js"></script>
+
+            <!-- View 5: Profil -->
+            <section id="profil" class="view-section">
+                <h2>QuickHB: Dein Profil</h2>
+                <p>Verwalte deine persönlichen Daten und Kontoeinstellungen.</p>
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                    <div style="width: 50px; height: 50px; background: #ddd; border-radius: 50%;"></div>
+                    <div>
+                        <strong>Max Mustermann</strong><br>
+                        <span style="font-size: 0.85rem;">max@beispiel.de</span>
+                    </div>
+                </div>
+                <p>Mitglied seit: 2023</p>
+            </section>
+
+            <!-- View 6: Einstellungen -->
+            <section id="einstellungen" class="view-section">
+                <h2>QuickHB Einstellungen</h2>
+                <p>Hier kannst du das Verhalten der App anpassen.</p>
+
+                <div class="demo-card" style="border-color: #ff9800;">
+                    <label style="display: flex; align-items: center; justify-content: space-between;">
+                        <span>Benachrichtigungen</span>
+                        <input type="checkbox" checked>
+                    </label>
+                </div>
+
+                <div class="demo-card" style="border-color: #ff9800;">
+                    <label style="display: flex; align-items: center; justify-content: space-between;">
+                        <span>Dark Mode</span>
+                        <input type="checkbox">
+                    </label>
+                </div>
+            </section>
+
+        </main>
+    </div>
+    <script type="module" src="index.js"></script>
 </body>
+
 </html>
